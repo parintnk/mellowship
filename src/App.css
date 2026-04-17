@@ -1,0 +1,6 @@
+/* App-specific styles */
+html { scroll-behavior: smooth; }
+body { overflow-x: hidden; background-color: #0A0908; }
+
+/* Scroll-margin so anchored sections aren't hidden under sticky nav */
+section[id] { scroll-margin-top: 80px; }

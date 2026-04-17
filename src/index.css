@@ -1,0 +1,323 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=Inter:wght@300;400;500;600&family=IBM+Plex+Mono:wght@400;500;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ------------------------------------------------------------------
+   Design tokens — Dark Premium Gold (Art Deco Jazz Lounge)
+   ------------------------------------------------------------------ */
+@layer base {
+  :root {
+    /* Palette */
+    --bg-base: #0A0908;
+    --bg-surface: #141210;
+    --bg-elevated: #1A1714;
+    --gold: #D4A84B;
+    --gold-bright: #F0CF65;
+    --gold-deep: #B8902E;
+    --brass: #8B6F47;
+    --ivory: #F4F1EC;
+    --muted: #A39A8C;
+    --line: #2A2622;
+
+    /* shadcn-compatible HSL (kept so shadcn components still compile) */
+    --background: 30 14% 4%;
+    --foreground: 40 25% 94%;
+    --card: 30 14% 7%;
+    --card-foreground: 40 25% 94%;
+    --popover: 30 14% 7%;
+    --popover-foreground: 40 25% 94%;
+    --primary: 43 63% 56%;
+    --primary-foreground: 30 14% 6%;
+    --secondary: 30 14% 12%;
+    --secondary-foreground: 40 25% 94%;
+    --muted-bg: 30 10% 14%;
+    --muted-foreground: 36 12% 65%;
+    --accent: 43 63% 56%;
+    --accent-foreground: 30 14% 6%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 32 14% 14%;
+    --input: 32 14% 14%;
+    --ring: 43 63% 56%;
+    --radius: 0rem;
+  }
+
+  * { @apply border-border; }
+  html { scroll-behavior: smooth; }
+  body {
+    background-color: var(--bg-base);
+    color: var(--ivory);
+    font-family: 'Inter', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  /* Display headings — premium serif */
+  h1, h2, h3 { font-family: 'Playfair Display', serif; letter-spacing: -0.01em; }
+  h4, h5, h6 { font-family: 'Cormorant Garamond', serif; letter-spacing: 0; }
+  .font-mono { font-family: 'IBM Plex Mono', monospace; }
+  .font-serif { font-family: 'Playfair Display', serif; }
+  .font-display { font-family: 'Cormorant Garamond', serif; }
+}
+
+/* ------------------------------------------------------------------
+   Scrollbar
+   ------------------------------------------------------------------ */
+::-webkit-scrollbar { width: 10px; }
+::-webkit-scrollbar-track { background: var(--bg-base); }
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, var(--gold-deep), var(--brass));
+  border-radius: 6px;
+}
+::-webkit-scrollbar-thumb:hover { background: var(--gold); }
+
+/* ------------------------------------------------------------------
+   Atmosphere
+   ------------------------------------------------------------------ */
+.grain-overlay {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 9999;
+  opacity: 0.06;
+  mix-blend-mode: overlay;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+}
+
+.vignette::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: radial-gradient(ellipse at center, transparent 0%, transparent 55%, rgba(0,0,0,0.55) 100%);
+}
+
+/* ------------------------------------------------------------------
+   Gold treatments
+   ------------------------------------------------------------------ */
+.gold-text {
+  background: linear-gradient(180deg, #F4DC8E 0%, #F0CF65 25%, #D4A84B 55%, #B8902E 80%, #8B6F47 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.gold-shimmer {
+  background: linear-gradient(110deg, #B8902E 0%, #F0CF65 30%, #FBE7A8 50%, #F0CF65 70%, #B8902E 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-size: 200% 100%;
+  animation: shimmer 6s ease-in-out infinite;
+}
+
+@keyframes shimmer {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+
+.gold-divider {
+  position: relative;
+  height: 1px;
+  background: linear-gradient(90deg, transparent 0%, rgba(212,168,75,0.6) 50%, transparent 100%);
+}
+
+.gold-divider-fill {
+  height: 1px;
+  background: linear-gradient(90deg, var(--gold-deep) 0%, var(--gold) 50%, var(--gold-deep) 100%);
+}
+
+.gold-divider-ornament {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  color: var(--gold);
+}
+.gold-divider-ornament::before,
+.gold-divider-ornament::after {
+  content: '';
+  height: 1px;
+  width: 60px;
+  background: linear-gradient(90deg, transparent, var(--gold) 80%);
+}
+.gold-divider-ornament::after {
+  background: linear-gradient(-90deg, transparent, var(--gold) 80%);
+}
+
+/* Premium gold button */
+.btn-gold {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.625rem;
+  padding: 0.95rem 1.75rem;
+  background: linear-gradient(135deg, #F0CF65 0%, #D4A84B 50%, #B8902E 100%);
+  color: #0A0908;
+  font-weight: 600;
+  font-size: 0.78rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: transform 0.25s ease, box-shadow 0.25s ease, filter 0.25s ease;
+  box-shadow: 0 6px 20px rgba(212,168,75,0.25), inset 0 1px 0 rgba(255,255,255,0.25);
+}
+.btn-gold:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 14px 36px rgba(212,168,75,0.4), inset 0 1px 0 rgba(255,255,255,0.3);
+  filter: brightness(1.06);
+}
+.btn-gold:active { transform: translateY(0); }
+
+/* Outline (ghost) button */
+.btn-ghost {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.625rem;
+  padding: 0.9rem 1.75rem;
+  background: transparent;
+  color: var(--ivory);
+  font-weight: 600;
+  font-size: 0.78rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  border: 1px solid rgba(212,168,75,0.55);
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+.btn-ghost:hover {
+  border-color: var(--gold-bright);
+  color: var(--gold-bright);
+  background: rgba(212,168,75,0.06);
+  transform: translateY(-2px);
+}
+
+/* Art Deco corner ornaments */
+.deco-corners { position: relative; }
+.deco-corners::before,
+.deco-corners::after,
+.deco-corners > .corner-tl,
+.deco-corners > .corner-tr,
+.deco-corners > .corner-bl,
+.deco-corners > .corner-br { content: ''; position: absolute; width: 18px; height: 18px; pointer-events: none; }
+.deco-corners > .corner-tl { top: -1px; left: -1px; border-top: 1.5px solid var(--gold); border-left: 1.5px solid var(--gold); }
+.deco-corners > .corner-tr { top: -1px; right: -1px; border-top: 1.5px solid var(--gold); border-right: 1.5px solid var(--gold); }
+.deco-corners > .corner-bl { bottom: -1px; left: -1px; border-bottom: 1.5px solid var(--gold); border-left: 1.5px solid var(--gold); }
+.deco-corners > .corner-br { bottom: -1px; right: -1px; border-bottom: 1.5px solid var(--gold); border-right: 1.5px solid var(--gold); }
+
+/* Eyebrow label (mono small caps) */
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 0.45em;
+  text-transform: uppercase;
+  color: var(--gold);
+}
+.eyebrow::before {
+  content: '';
+  width: 28px;
+  height: 1px;
+  background: var(--gold);
+}
+
+/* Editorial number */
+.deco-number {
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  font-weight: 500;
+  font-size: 5rem;
+  line-height: 1;
+  background: linear-gradient(180deg, #F0CF65, #B8902E);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Dot leader (menu style) */
+.dot-leader {
+  display: flex;
+  align-items: baseline;
+  gap: 0.75rem;
+  width: 100%;
+}
+.dot-leader > .dots {
+  flex: 1;
+  border-bottom: 1px dotted rgba(212,168,75,0.35);
+  margin: 0 4px;
+  position: relative;
+  top: -4px;
+}
+
+/* Cinematic image */
+.img-cinematic { filter: saturate(0.85) contrast(1.05) brightness(0.92); }
+.img-warm { filter: saturate(0.9) contrast(1.05) brightness(0.9) sepia(0.08); }
+
+/* Section base */
+.section-pad { padding-top: clamp(80px, 12vw, 180px); padding-bottom: clamp(80px, 12vw, 180px); }
+.container-deco { max-width: 1280px; margin: 0 auto; padding-left: clamp(20px, 5vw, 64px); padding-right: clamp(20px, 5vw, 64px); }
+
+/* Reveal animation */
+@keyframes fadeRise {
+  from { opacity: 0; transform: translateY(28px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+.reveal {
+  opacity: 0;
+  animation: fadeRise 0.9s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+.reveal-delay-1 { animation-delay: 0.1s; }
+.reveal-delay-2 { animation-delay: 0.25s; }
+.reveal-delay-3 { animation-delay: 0.4s; }
+.reveal-delay-4 { animation-delay: 0.55s; }
+
+/* Scroll-triggered class added by IntersectionObserver in components */
+.in-view { animation-play-state: running; }
+
+/* Form input */
+.input-gold {
+  background: rgba(20,18,16,0.8);
+  border: 1px solid var(--line);
+  color: var(--ivory);
+  padding: 1rem 1.25rem;
+  transition: border-color 0.2s ease, background-color 0.2s ease;
+  font-family: 'Inter', sans-serif;
+}
+.input-gold::placeholder { color: rgba(244,241,236,0.4); }
+.input-gold:focus {
+  outline: none;
+  border-color: var(--gold);
+  background: rgba(20,18,16,0.95);
+}
+
+/* Selection */
+::selection { background-color: rgba(212,168,75,0.35); color: var(--ivory); }
+
+/* Focus ring (a11y) */
+:focus-visible {
+  outline: 2px solid var(--gold);
+  outline-offset: 3px;
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  html { scroll-behavior: auto !important; }
+  .reveal { opacity: 1; }
+}
