@@ -31,10 +31,13 @@ export default function HeroSection() {
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,transparent_0%,#0A0908_85%)]" />
       </div>
 
-      {/* Top corner mark */}
-      <div className="absolute top-24 left-1/2 -translate-x-1/2 z-20" data-reveal data-delay="0">
+      {/* Top corner mark — clears the nav on mobile */}
+      <div
+        className="absolute top-[88px] sm:top-24 left-1/2 -translate-x-1/2 z-20 w-full px-6 hidden sm:block"
+        data-reveal data-delay="0"
+      >
         <div className="gold-divider-ornament">
-          <span className="font-mono text-[10px] tracking-[0.5em] uppercase">Chiang Mai · Est. 1925</span>
+          <span className="font-mono text-[9px] sm:text-[10px] tracking-[0.4em] sm:tracking-[0.5em] uppercase whitespace-nowrap">Chiang Mai · Est. 1925</span>
         </div>
       </div>
 
@@ -75,12 +78,12 @@ export default function HeroSection() {
         </div>
 
         {/* Subtitle line */}
-        <div className="mt-16 flex items-center justify-center gap-6 text-[#F4F1EC]/60" data-reveal data-delay="620">
-          <span className="font-mono text-[10px] tracking-[0.4em] uppercase">Live Jazz</span>
+        <div className="mt-12 sm:mt-16 flex flex-wrap items-center justify-center gap-x-3 gap-y-2 sm:gap-6 text-[#F4F1EC]/60" data-reveal data-delay="620">
+          <span className="font-mono text-[9px] sm:text-[10px] tracking-[0.3em] sm:tracking-[0.4em] uppercase">Live Jazz</span>
           <span className="w-1 h-1 rounded-full bg-[#D4A84B]" />
-          <span className="font-mono text-[10px] tracking-[0.4em] uppercase">Crafted Cocktails</span>
-          <span className="w-1 h-1 rounded-full bg-[#D4A84B]" />
-          <span className="font-mono text-[10px] tracking-[0.4em] uppercase hidden sm:inline">Late Nights</span>
+          <span className="font-mono text-[9px] sm:text-[10px] tracking-[0.3em] sm:tracking-[0.4em] uppercase">Crafted Cocktails</span>
+          <span className="w-1 h-1 rounded-full bg-[#D4A84B] hidden sm:inline-block" />
+          <span className="font-mono text-[9px] sm:text-[10px] tracking-[0.3em] sm:tracking-[0.4em] uppercase hidden sm:inline">Late Nights</span>
         </div>
       </div>
 
@@ -88,7 +91,7 @@ export default function HeroSection() {
       <button
         onClick={scrollToLineup}
         aria-label="Scroll to lineup"
-        className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10 flex flex-col items-center gap-2 text-[#D4A84B]/70 hover:text-[#F0CF65] transition-colors group"
+        className="hidden sm:flex absolute bottom-8 left-1/2 -translate-x-1/2 z-10 flex-col items-center gap-2 text-[#D4A84B]/70 hover:text-[#F0CF65] transition-colors group"
         data-reveal data-delay="800"
       >
         <span className="font-mono text-[9px] tracking-[0.4em] uppercase">Scroll</span>

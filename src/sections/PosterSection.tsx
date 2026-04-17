@@ -19,7 +19,7 @@ export default function PosterSection() {
       <div className="relative container-deco">
         <div className="max-w-3xl mx-auto" data-reveal>
           {/* Vintage poster card */}
-          <div className="relative deco-corners bg-[#141210] p-10 md:p-16 text-center">
+          <div className="relative deco-corners bg-[#141210] p-6 sm:p-10 md:p-16 text-center">
             <span className="corner-tl" /><span className="corner-tr" /><span className="corner-bl" /><span className="corner-br" />
 
             {/* Inner double border */}

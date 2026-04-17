@@ -54,8 +54,8 @@ export default function Navigation() {
             className="group flex items-center gap-3"
             aria-label="The Mellowship — home"
           >
-            <span className="font-mono text-[10px] tracking-[0.4em] text-[#D4A84B] group-hover:text-[#F0CF65] transition-colors">EST · 1925</span>
-            <span className="hidden md:inline-block h-4 w-px bg-[#D4A84B]/40" />
+            <span className="hidden sm:inline font-mono text-[10px] tracking-[0.4em] text-[#D4A84B] group-hover:text-[#F0CF65] transition-colors">EST · 1925</span>
+            <span className="hidden sm:inline-block h-4 w-px bg-[#D4A84B]/40" />
             <span className="font-serif italic text-base md:text-lg text-[#F4F1EC] tracking-wide">The Mellowship</span>
           </button>
 

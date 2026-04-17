@@ -19,7 +19,7 @@ export default function NewsletterSection() {
   return (
     <section ref={ref} id="newsletter" className="relative section-pad bg-[#0A0908]">
       <div className="container-deco">
-        <div className="relative max-w-3xl mx-auto deco-corners bg-gradient-to-br from-[#141210] via-[#1A1714] to-[#141210] p-10 md:p-16 text-center" data-reveal>
+        <div className="relative max-w-3xl mx-auto deco-corners bg-gradient-to-br from-[#141210] via-[#1A1714] to-[#141210] p-6 sm:p-10 md:p-16 text-center" data-reveal>
           <span className="corner-tl" /><span className="corner-tr" /><span className="corner-bl" /><span className="corner-br" />
 
           <Mail className="w-8 h-8 text-[#D4A84B] mx-auto mb-6" />

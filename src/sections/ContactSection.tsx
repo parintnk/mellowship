@@ -107,11 +107,11 @@ export default function ContactSection() {
             <p className="font-mono text-[10px] tracking-[0.3em] text-[#F4F1EC]/40 uppercase">{t('footer.copy')}</p>
 
             <div className="flex items-center gap-6">
-              <button onClick={handleInstagram} className="flex items-center gap-2 text-[#F4F1EC]/55 hover:text-[#F0CF65] transition-colors text-xs font-mono tracking-widest uppercase">
+              <button onClick={handleInstagram} aria-label="Instagram" className="flex items-center gap-2 text-[#F4F1EC]/55 hover:text-[#F0CF65] transition-colors text-xs font-mono tracking-widest uppercase py-2 px-1">
                 <Instagram className="w-4 h-4" />
                 {t('footer.ig')}
               </button>
-              <button onClick={handleFacebook} className="flex items-center gap-2 text-[#F4F1EC]/55 hover:text-[#F0CF65] transition-colors text-xs font-mono tracking-widest uppercase">
+              <button onClick={handleFacebook} aria-label="Facebook" className="flex items-center gap-2 text-[#F4F1EC]/55 hover:text-[#F0CF65] transition-colors text-xs font-mono tracking-widest uppercase py-2 px-1">
                 <Facebook className="w-4 h-4" />
                 {t('footer.fb')}
               </button>

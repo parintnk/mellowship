@@ -32,39 +32,39 @@ export default function EventSection() {
             <span className="hidden md:block absolute left-[62.5%] -translate-x-1/2 -bottom-3 w-6 h-6 rounded-full bg-[#0A0908]" />
 
             {/* Main stub */}
-            <div className="relative p-10 md:p-16">
-              <div className="flex items-center gap-3 mb-8">
+            <div className="relative p-6 sm:p-10 md:p-16">
+              <div className="flex items-center gap-3 mb-6 sm:mb-8">
                 <span className="w-2 h-2 rounded-full bg-[#F0CF65] animate-pulse" />
-                <span className="font-mono text-[10px] tracking-[0.5em] text-[#F0CF65] uppercase">{t('event.label')}</span>
+                <span className="font-mono text-[10px] tracking-[0.4em] sm:tracking-[0.5em] text-[#F0CF65] uppercase">{t('event.label')}</span>
               </div>
 
-              <h2 className="font-serif text-[clamp(48px,8vw,110px)] leading-[0.92] mb-6">
+              <h2 className="font-serif text-[clamp(40px,8vw,110px)] leading-[0.92] mb-6">
                 <span className="block italic gold-shimmer">{t('event.title')}</span>
-                <span className="block text-[#F4F1EC] text-[0.5em] font-normal italic font-display mt-2">
+                <span className="block text-[#F4F1EC] text-[0.4em] sm:text-[0.5em] font-normal italic font-display mt-2 leading-snug">
                   {language === 'en' ? 'an evening with the quartet' : 'ค่ำคืนกับควอเตท'}
                 </span>
               </h2>
 
-              <div className="gold-divider w-32 mb-6" />
+              <div className="gold-divider w-24 sm:w-32 mb-6" />
 
-              <div className="grid grid-cols-3 gap-6 max-w-md">
+              <div className="grid grid-cols-3 gap-3 sm:gap-6 max-w-md">
                 <div>
-                  <div className="font-mono text-[9px] tracking-[0.4em] text-[#D4A84B] uppercase mb-1">{language === 'en' ? 'Date' : 'วันที่'}</div>
-                  <div className="font-serif italic text-xl text-[#F4F1EC]">Sat 26</div>
+                  <div className="font-mono text-[9px] tracking-[0.3em] sm:tracking-[0.4em] text-[#D4A84B] uppercase mb-1">{language === 'en' ? 'Date' : 'วันที่'}</div>
+                  <div className="font-serif italic text-lg sm:text-xl text-[#F4F1EC]">Sat 26</div>
                 </div>
                 <div>
-                  <div className="font-mono text-[9px] tracking-[0.4em] text-[#D4A84B] uppercase mb-1">{language === 'en' ? 'Doors' : 'เปิด'}</div>
-                  <div className="font-serif italic text-xl text-[#F4F1EC]">{t('event.time')}</div>
+                  <div className="font-mono text-[9px] tracking-[0.3em] sm:tracking-[0.4em] text-[#D4A84B] uppercase mb-1">{language === 'en' ? 'Doors' : 'เปิด'}</div>
+                  <div className="font-serif italic text-lg sm:text-xl text-[#F4F1EC]">{t('event.time')}</div>
                 </div>
                 <div>
-                  <div className="font-mono text-[9px] tracking-[0.4em] text-[#D4A84B] uppercase mb-1">{language === 'en' ? 'Venue' : 'สถานที่'}</div>
-                  <div className="font-serif italic text-xl text-[#F4F1EC]">CNX</div>
+                  <div className="font-mono text-[9px] tracking-[0.3em] sm:tracking-[0.4em] text-[#D4A84B] uppercase mb-1">{language === 'en' ? 'Venue' : 'สถานที่'}</div>
+                  <div className="font-serif italic text-lg sm:text-xl text-[#F4F1EC]">CNX</div>
                 </div>
               </div>
             </div>
 
             {/* Detached stub */}
-            <div className="relative p-8 md:p-10 flex flex-col items-center justify-center text-center bg-[#0F0D0B] md:bg-transparent">
+            <div className="relative p-6 sm:p-8 md:p-10 flex flex-col items-center justify-center text-center bg-[#0F0D0B] md:bg-transparent">
               <p className="font-mono text-[9px] tracking-[0.4em] text-[#D4A84B] uppercase mb-3">{language === 'en' ? 'Admit One' : 'ตั๋ว'}</p>
               <div className="font-serif italic text-5xl gold-text mb-1">N°</div>
               <div className="font-mono text-2xl text-[#F4F1EC] tracking-widest mb-6">042</div>

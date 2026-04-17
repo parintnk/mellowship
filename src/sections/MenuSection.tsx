@@ -37,29 +37,29 @@ export default function MenuSection() {
           </p>
         </div>
 
-        <div className="grid lg:grid-cols-12 gap-12 lg:gap-20 mb-20">
-          {/* Left: image + hours */}
-          <div className="lg:col-span-5 space-y-10" data-reveal data-delay="100">
-            <div className="relative deco-corners aspect-[3/4]">
+        <div className="grid lg:grid-cols-12 gap-10 sm:gap-12 lg:gap-20 mb-16 sm:mb-20">
+          {/* Left: image + hours — appears AFTER menu on mobile */}
+          <div className="lg:col-span-5 space-y-8 lg:space-y-10 order-2 lg:order-1" data-reveal data-delay="100">
+            <div className="relative deco-corners aspect-square lg:aspect-[3/4]">
               <span className="corner-tl" /><span className="corner-tr" /><span className="corner-bl" /><span className="corner-br" />
               <img src="/menu_cocktail.jpg" alt="Signature cocktail" className="w-full h-full object-cover img-warm" />
               <div className="absolute inset-0 bg-gradient-to-t from-[#0A0908]/70 via-transparent to-transparent" />
             </div>
 
             {/* Hours card */}
-            <div className="relative deco-corners bg-[#141210] p-8">
+            <div className="relative deco-corners bg-[#141210] p-6 sm:p-8">
               <span className="corner-tl" /><span className="corner-tr" /><span className="corner-bl" /><span className="corner-br" />
               <div className="flex items-center gap-3 mb-4">
                 <Clock className="w-4 h-4 text-[#D4A84B]" />
-                <span className="font-mono text-[10px] tracking-[0.4em] text-[#D4A84B] uppercase">{t('menu.hours')}</span>
+                <span className="font-mono text-[10px] tracking-[0.35em] sm:tracking-[0.4em] text-[#D4A84B] uppercase">{t('menu.hours')}</span>
               </div>
               <p className="font-serif italic text-xl text-[#F4F1EC] mb-1">{t('menu.hours.detail')}</p>
               <p className="text-sm text-[#F4F1EC]/50">{t('menu.closed')}</p>
             </div>
           </div>
 
-          {/* Right: menu */}
-          <div className="lg:col-span-7 space-y-12" data-reveal data-delay="200">
+          {/* Right: menu — appears FIRST on mobile */}
+          <div className="lg:col-span-7 space-y-10 sm:space-y-12 order-1 lg:order-2" data-reveal data-delay="200">
             {/* Drinks */}
             <div>
               <div className="flex items-baseline justify-between mb-6">
@@ -78,9 +78,9 @@ export default function MenuSection() {
                 {drinks.map((d) => (
                   <li key={d.name.en}>
                     <div className="dot-leader">
-                      <span className="font-serif text-lg md:text-xl text-[#F4F1EC]">{language === 'en' ? d.name.en : d.name.th}</span>
+                      <span className="font-serif text-base sm:text-lg md:text-xl text-[#F4F1EC] flex-shrink min-w-0">{language === 'en' ? d.name.en : d.name.th}</span>
                       <span className="dots" />
-                      <span className="font-mono text-sm text-[#D4A84B]">{d.price}</span>
+                      <span className="font-mono text-sm text-[#D4A84B] flex-shrink-0">{d.price}</span>
                     </div>
                     {d.desc && (
                       <p className="text-sm text-[#F4F1EC]/50 italic mt-1 font-light">
@@ -106,9 +106,9 @@ export default function MenuSection() {
                 {bites.map((d) => (
                   <li key={d.name.en}>
                     <div className="dot-leader">
-                      <span className="font-serif text-lg md:text-xl text-[#F4F1EC]">{language === 'en' ? d.name.en : d.name.th}</span>
+                      <span className="font-serif text-base sm:text-lg md:text-xl text-[#F4F1EC] flex-shrink min-w-0">{language === 'en' ? d.name.en : d.name.th}</span>
                       <span className="dots" />
-                      <span className="font-mono text-sm text-[#D4A84B]">{d.price}</span>
+                      <span className="font-mono text-sm text-[#D4A84B] flex-shrink-0">{d.price}</span>
                     </div>
                     {d.desc && (
                       <p className="text-sm text-[#F4F1EC]/50 italic mt-1 font-light">

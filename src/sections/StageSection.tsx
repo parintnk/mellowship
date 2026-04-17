@@ -64,7 +64,7 @@ export default function StageSection() {
               key={s.key}
               data-reveal
               data-delay={String(i * 100)}
-              className={`relative deco-corners p-8 transition-all duration-500 ${
+              className={`relative deco-corners p-6 sm:p-8 transition-all duration-500 ${
                 s.featured
                   ? 'bg-gradient-to-br from-[#1A1714] via-[#141210] to-[#0F0D0B] hover:shadow-[0_20px_60px_rgba(212,168,75,0.18)]'
                   : 'bg-[#141210]/80 hover:bg-[#1A1714]'

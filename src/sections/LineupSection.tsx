@@ -31,18 +31,18 @@ export default function LineupSection() {
 
         <div className="grid lg:grid-cols-12 gap-10 lg:gap-16 items-center">
           {/* Left: Card */}
-          <div className="lg:col-span-7 deco-corners relative bg-gradient-to-br from-[#141210] to-[#0F0D0B] p-10 md:p-16" data-reveal data-delay="100">
+          <div className="lg:col-span-7 deco-corners relative bg-gradient-to-br from-[#141210] to-[#0F0D0B] p-6 sm:p-10 md:p-16" data-reveal data-delay="100">
             <span className="corner-tl" /><span className="corner-tr" /><span className="corner-bl" /><span className="corner-br" />
 
-            <div className="flex items-center gap-6 mb-8">
+            <div className="flex items-center gap-4 sm:gap-6 mb-8">
               <div className="text-center">
-                <div className="font-mono text-[10px] tracking-[0.3em] text-[#D4A84B] uppercase">{dayName}</div>
-                <div className="font-serif italic text-3xl text-[#F4F1EC] mt-1">{dateStr}</div>
+                <div className="font-mono text-[9px] sm:text-[10px] tracking-[0.25em] sm:tracking-[0.3em] text-[#D4A84B] uppercase">{dayName}</div>
+                <div className="font-serif italic text-2xl sm:text-3xl text-[#F4F1EC] mt-1">{dateStr}</div>
               </div>
-              <div className="h-12 w-px bg-[#D4A84B]/30" />
+              <div className="h-10 sm:h-12 w-px bg-[#D4A84B]/30" />
               <div>
-                <div className="font-mono text-[10px] tracking-[0.3em] text-[#D4A84B] uppercase">Doors</div>
-                <div className="font-serif italic text-3xl text-[#F4F1EC] mt-1">{t('lineup.time')}</div>
+                <div className="font-mono text-[9px] sm:text-[10px] tracking-[0.25em] sm:tracking-[0.3em] text-[#D4A84B] uppercase">Doors</div>
+                <div className="font-serif italic text-2xl sm:text-3xl text-[#F4F1EC] mt-1">{t('lineup.time')}</div>
               </div>
             </div>
 
@@ -58,15 +58,15 @@ export default function LineupSection() {
             </p>
 
             {/* Set list */}
-            <div className="grid grid-cols-3 gap-4 mb-10 pt-6 border-t border-[#D4A84B]/15">
+            <div className="grid grid-cols-3 gap-2 sm:gap-4 mb-10 pt-6 border-t border-[#D4A84B]/15">
               {[
                 { label: language === 'en' ? 'Set I' : 'เซ็ต 1', time: '8:30 PM' },
                 { label: language === 'en' ? 'Set II' : 'เซ็ต 2', time: '10:00 PM' },
                 { label: language === 'en' ? 'Late' : 'รอบดึก', time: '11:30 PM' },
               ].map((s) => (
                 <div key={s.label}>
-                  <div className="font-mono text-[10px] tracking-[0.3em] text-[#D4A84B] uppercase mb-1">{s.label}</div>
-                  <div className="font-serif italic text-xl text-[#F4F1EC]">{s.time}</div>
+                  <div className="font-mono text-[9px] sm:text-[10px] tracking-[0.2em] sm:tracking-[0.3em] text-[#D4A84B] uppercase mb-1">{s.label}</div>
+                  <div className="font-serif italic text-base sm:text-xl text-[#F4F1EC]">{s.time}</div>
                 </div>
               ))}
             </div>
