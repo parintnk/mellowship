@@ -6,7 +6,7 @@ export default function HeroSection() {
   const { t, language } = useLanguage();
   const ref = useReveal<HTMLElement>({ threshold: 0.05 });
 
-  const handleBook = () => window.open('tel:021088888', '_self');
+  const handleBook = () => window.open('tel:053908888', '_self');
   const scrollToLineup = () => document.getElementById('lineup')?.scrollIntoView({ behavior: 'smooth' });
 
   return (
@@ -34,7 +34,7 @@ export default function HeroSection() {
       {/* Main content */}
       <div className="relative z-10 text-center px-6 max-w-4xl pt-16">
         <p className="font-mono text-[10px] sm:text-[11px] tracking-[0.38em] uppercase text-[#D4A84B] mb-7" data-reveal data-delay="100">
-          The Mellowship · Bangkok
+          The Mellowship · Chiang Mai
         </p>
 
         <h1

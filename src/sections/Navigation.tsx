@@ -28,7 +28,7 @@ export default function Navigation() {
   }, [isMenuOpen]);
 
   const handleBook = () => {
-    window.open('tel:021088888', '_self');
+    window.open('tel:053908888', '_self');
     setIsMenuOpen(false);
   };
 

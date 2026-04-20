@@ -120,7 +120,7 @@ export default function MenuSection() {
             </div>
 
             <button
-              onClick={() => window.open('tel:021088888', '_self')}
+              onClick={() => window.open('https://www.facebook.com/themellowshipjazz/?locale=th_TH', '_blank')}
               className="btn-ghost"
             >
               <FileText className="w-4 h-4" />

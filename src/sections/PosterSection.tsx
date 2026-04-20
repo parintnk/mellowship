@@ -6,7 +6,7 @@ export default function PosterSection() {
   const { t, language } = useLanguage();
   const ref = useReveal<HTMLElement>();
 
-  const handleBook = () => window.open('tel:021088888', '_self');
+  const handleBook = () => window.open('tel:053908888', '_self');
 
   return (
     <section ref={ref} id="poster" className="relative section-pad bg-[#0A0908] overflow-hidden">

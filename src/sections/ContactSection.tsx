@@ -6,7 +6,7 @@ export default function ContactSection() {
   const { t, language } = useLanguage();
   const ref = useReveal<HTMLElement>();
 
-  const handleCall = () => window.open('tel:021088888', '_self');
+  const handleCall = () => window.open('tel:053908888', '_self');
   const handleFacebook = () => window.open('https://www.facebook.com/themellowshipjazz/', '_blank');
   const handleInstagram = () => window.open('https://www.instagram.com/themellowshipjazz/', '_blank');
 
@@ -41,7 +41,7 @@ export default function ContactSection() {
                 <Phone className="w-3.5 h-3.5 text-[#D4A84B]" />
                 <span className="font-mono text-[10px] tracking-[0.4em] text-[#D4A84B] uppercase">{language === 'en' ? 'Reservations' : 'จองโต๊ะ'}</span>
               </div>
-              <a href="tel:021088888" className="font-serif text-3xl text-[#F4F1EC] hover:text-[#F0CF65] transition-colors">
+              <a href="tel:053908888" className="font-serif text-3xl text-[#F4F1EC] hover:text-[#F0CF65] transition-colors">
                 {t('contact.phone')}
               </a>
             </div>
@@ -83,7 +83,7 @@ export default function ContactSection() {
           <div className="lg:col-span-7 relative deco-corners aspect-[4/3] lg:aspect-auto lg:min-h-[500px]" data-reveal data-delay="150">
             <span className="corner-tl" /><span className="corner-tr" /><span className="corner-bl" /><span className="corner-br" />
             <iframe
-              src="https://maps.google.com/maps?q=13.7563,100.5018&z=15&output=embed"
+              src="https://maps.google.com/maps?q=231%2F12%201004%2C%20Tambon%20Chang%20Phueak%2C%20Mueang%20Chiang%20Mai%20District%2C%20Chiang%20Mai%2050200&z=16&output=embed"
               width="100%"
               height="100%"
               style={{ border: 0, filter: 'grayscale(100%) invert(94%) contrast(85%) sepia(20%) hue-rotate(-10deg)' }}

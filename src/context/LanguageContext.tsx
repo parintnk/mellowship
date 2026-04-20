@@ -14,8 +14,8 @@ export const translations: Translations = {
   'nav.book': { en: 'RESERVE', th: 'จอง' },
   'hero.title': { en: 'THE MELLOWSHIP', th: 'เดอะ เมลโลชิพ' },
   'hero.subtitle': {
-    en: 'Live jazz · Acoustic lounge · Bangkok',
-    th: 'แจ๊สสด · อะคูสติกเลานจ์ · กรุงเทพฯ',
+    en: 'Live jazz · Acoustic lounge · Chiang Mai',
+    th: 'แจ๊สสด · อะคูสติกเลานจ์ · เชียงใหม่',
   },
   'hero.cta.book': { en: 'Reserve Your Table', th: 'จองโต๊ะ' },
   'hero.cta.lineup': { en: 'View Performance Schedule', th: 'ดูรายการแสดง' },
@@ -44,8 +44,11 @@ export const translations: Translations = {
   'stage.title': { en: 'WHAT OUR PATRONS SAY', th: 'เสียงจากผู้มาเยือน' },
   'stage.cta': { en: 'Reserve your spot', th: 'จองที่นั่ง' },
   'contact.title': { en: 'Reserve a table', th: 'จองโต๊ะ' },
-  'contact.phone': { en: '02 108 8888', th: '02 108 8888' },
-  'contact.address': { en: '231/12 1004, City Center, Bangkok', th: '231/12 1004 ใจกลางกรุงเทพฯ' },
+  'contact.phone': { en: '053 908 888', th: '053 908 888' },
+  'contact.address': {
+    en: '231/12 1004, Tambon Chang Phueak, Mueang Chiang Mai District, Chiang Mai 50200',
+    th: '231/12 1004 ตำบลช้างเผือก อำเภอเมืองเชียงใหม่ เชียงใหม่ 50200',
+  },
   'contact.cta.call': { en: 'Call now', th: 'โทรเลย' },
   'contact.cta.fb': { en: 'Message on Facebook', th: 'ส่งข้อความบน Facebook' },
   'contact.location': {

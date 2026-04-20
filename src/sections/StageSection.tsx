@@ -105,7 +105,7 @@ export default function StageSection() {
                 ? 'Limited seating keeps the room balanced, quiet, and focused on the performance.'
                 : 'จำนวนที่นั่งจำกัดช่วยให้ห้องสมดุล เงียบพอดี และจดจ่อกับการแสดง'}
             </p>
-            <button onClick={() => window.open('tel:021088888', '_self')} className="btn-gold">
+            <button onClick={() => window.open('tel:053908888', '_self')} className="btn-gold">
               {t('stage.cta')}
             </button>
           </div>

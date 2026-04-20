@@ -26,7 +26,7 @@ const weeklyLineup = [
     genre: 'Fusion',
     artist: 'Arun Electric Trio',
     bio: {
-      en: 'Modern harmonic colors, Rhodes textures, and Bangkok groove traditions shaped into long-form sets.',
+      en: 'Modern harmonic colors, Rhodes textures, and Chiang Mai groove traditions shaped into long-form sets.',
       th: 'สีสันฮาร์โมนีร่วมสมัย เท็กซ์เจอร์โรดส์ และกรูฟแบบกรุงเทพฯ ในเซ็ตที่ขยายอารมณ์ยาวขึ้น',
     },
   },
@@ -63,7 +63,7 @@ export default function LineupSection() {
   const { t, language } = useLanguage();
   const ref = useReveal<HTMLElement>();
 
-  const handleReserve = () => window.open('tel:021088888', '_self');
+  const handleReserve = () => window.open('tel:053908888', '_self');
 
   return (
     <section ref={ref} id="lineup" className="relative section-pad bg-[#0A0908] overflow-hidden">
