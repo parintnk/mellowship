@@ -1,6 +1,6 @@
 import { useLanguage } from '../context/LanguageContext';
 import { useReveal } from '../hooks/useReveal';
-import { Phone, Calendar, ChevronDown } from 'lucide-react';
+import { Phone, Calendar } from 'lucide-react';
 
 export default function HeroSection() {
   const { t, language } = useLanguage();
@@ -54,12 +54,12 @@ export default function HeroSection() {
             : 'สัมผัสบรรยากาศแจ๊สเลานจ์สไตล์นิวยอร์ก ที่ท่วงทำนองระดับโลกพบกับบรรยากาศอันน่าจดจำ'}
         </p>
 
-        <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-center" data-reveal data-delay="430">
-          <button onClick={handleBook} className="btn-gold">
+        <div className="mx-auto flex w-full max-w-[320px] flex-col sm:w-auto sm:max-w-none sm:flex-row gap-3 sm:gap-4 justify-center items-center" data-reveal data-delay="430">
+          <button onClick={handleBook} className="btn-gold w-full sm:w-auto">
             <Phone className="w-4 h-4" />
             {t('hero.cta.book')}
           </button>
-          <button onClick={scrollToLineup} className="btn-ghost">
+          <button onClick={scrollToLineup} className="btn-ghost w-full sm:w-auto">
             <Calendar className="w-4 h-4" />
             {t('hero.cta.lineup')}
           </button>
