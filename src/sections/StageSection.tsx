@@ -1,34 +1,37 @@
 import { useLanguage } from '../context/LanguageContext';
 import { useReveal } from '../hooks/useReveal';
-import { Star, Armchair, Sofa, ArrowRight } from 'lucide-react';
+import { Quote, Star } from 'lucide-react';
+
+const testimonials = [
+  {
+    name: 'Michael R.',
+    role: { en: 'Expat listener', th: 'ผู้ฟังต่างชาติ' },
+    quote: {
+      en: 'The best acoustic experience I have found in Asia. A must-visit for any serious jazz lover.',
+      th: 'หนึ่งในประสบการณ์เสียงอะคูสติกที่ดีที่สุดในเอเชีย สำหรับคนรักแจ๊สตัวจริงไม่ควรพลาด',
+    },
+  },
+  {
+    name: 'Ananya S.',
+    role: { en: 'Pianist', th: 'นักเปียโน' },
+    quote: {
+      en: 'Every table feels close to the stage without losing privacy. The room lets the music breathe.',
+      th: 'ทุกโต๊ะใกล้เวทีแต่ยังมีความเป็นส่วนตัว ห้องนี้ปล่อยให้ดนตรีหายใจได้จริง',
+    },
+  },
+  {
+    name: 'Kenji M.',
+    role: { en: 'Record collector', th: 'นักสะสมแผ่นเสียง' },
+    quote: {
+      en: 'A rare listening room where the bass is warm, the cymbals are clear, and the audience is present.',
+      th: 'ห้องฟังเพลงที่หาได้ยาก เบสอุ่น ฉาบชัด และผู้ฟังตั้งใจอยู่กับดนตรี',
+    },
+  },
+];
 
 export default function StageSection() {
   const { t, language } = useLanguage();
   const ref = useReveal<HTMLElement>();
-
-  const handleReserve = () => window.open('tel:053908888', '_self');
-
-  const seating = [
-    {
-      icon: Star,
-      key: 'stage.front',
-      tag: language === 'en' ? 'Closest to the brass' : 'ใกล้เครื่องเป่าที่สุด',
-      capacity: language === 'en' ? '4 tables · seats 2–4' : '4 โต๊ะ · 2–4 ที่นั่ง',
-      featured: true,
-    },
-    {
-      icon: Armchair,
-      key: 'stage.bar',
-      tag: language === 'en' ? 'Solo or duo' : 'เดี่ยวหรือคู่',
-      capacity: language === 'en' ? '12 stools · first come' : '12 ที่นั่ง · มาก่อนได้ก่อน',
-    },
-    {
-      icon: Sofa,
-      key: 'stage.lounge',
-      tag: language === 'en' ? 'Long, slow nights' : 'ค่ำคืนที่ยาวนาน',
-      capacity: language === 'en' ? '6 lounges · seats 4–6' : '6 โซฟา · 4–6 ที่นั่ง',
-    },
-  ];
 
   return (
     <section ref={ref} id="stage" className="relative section-pad bg-[#0A0908] overflow-hidden">
@@ -41,74 +44,69 @@ export default function StageSection() {
       <div className="relative container-deco">
         <div className="grid lg:grid-cols-12 gap-10 items-end mb-16">
           <div className="lg:col-span-7" data-reveal>
-            <p className="eyebrow mb-5">{language === 'en' ? 'The Room' : 'ห้องของเรา'}</p>
+            <p className="eyebrow mb-5">{language === 'en' ? 'Social Proof' : 'เสียงตอบรับ'}</p>
             <h2 className="font-serif text-[clamp(40px,6vw,84px)] leading-[1.05] mb-6">
-              <span className="block text-[#F4F1EC]">{language === 'en' ? 'Stage &' : 'เวที &'}</span>
-              <span className="block italic gold-text">{language === 'en' ? 'Seating' : 'ที่นั่ง'}</span>
+              <span className="block text-[#F4F1EC]">{language === 'en' ? 'What Our' : 'เสียงจาก'}</span>
+              <span className="block italic gold-text">{language === 'en' ? 'Patrons Say' : 'ผู้มาเยือน'}</span>
             </h2>
             <p className="font-display italic text-xl text-[#F4F1EC]/75 max-w-xl leading-relaxed">
-              {t('stage.subtitle')}
+              {language === 'en'
+                ? 'The atmosphere is intimate by design, with every seat close enough to feel the performance unfold.'
+                : 'บรรยากาศถูกออกแบบให้ใกล้ชิด ทุกที่นั่งใกล้พอจะรับรู้การแสดงที่ค่อยๆ คลี่คลายตรงหน้า'}
             </p>
           </div>
           <div className="lg:col-span-5 lg:text-right" data-reveal data-delay="100">
-            <p className="font-mono text-[10px] tracking-[0.4em] text-[#D4A84B] uppercase mb-2">{language === 'en' ? 'Capacity' : 'ความจุ'}</p>
-            <p className="font-serif italic text-5xl text-[#F4F1EC]">60</p>
-            <p className="text-sm text-[#F4F1EC]/55 mt-1">{language === 'en' ? 'seats — intentionally intimate' : 'ที่นั่ง — ตั้งใจให้ใกล้ชิด'}</p>
+            <p className="font-mono text-[10px] tracking-[0.4em] text-[#D4A84B] uppercase mb-2">{language === 'en' ? 'Listener rating' : 'คะแนนผู้ฟัง'}</p>
+            <div className="flex lg:justify-end gap-1 mb-3">
+              {[...Array(5)].map((_, i) => (
+                <Star key={i} className="w-5 h-5 fill-[#D4A84B] text-[#D4A84B]" />
+              ))}
+            </div>
+            <p className="font-serif italic text-5xl text-[#F4F1EC]">4.9</p>
+            <p className="text-sm text-[#F4F1EC]/55 mt-1">{language === 'en' ? 'from serious listeners' : 'จากผู้ฟังตัวจริง'}</p>
           </div>
         </div>
 
-        {/* Seating cards */}
         <div className="grid md:grid-cols-3 gap-6 mb-16">
-          {seating.map((s, i) => (
+          {testimonials.map((item, i) => (
             <div
-              key={s.key}
+              key={item.name}
               data-reveal
               data-delay={String(i * 100)}
-              className={`relative deco-corners p-6 sm:p-8 transition-all duration-500 ${
-                s.featured
-                  ? 'bg-gradient-to-br from-[#1A1714] via-[#141210] to-[#0F0D0B] hover:shadow-[0_20px_60px_rgba(212,168,75,0.18)]'
-                  : 'bg-[#141210]/80 hover:bg-[#1A1714]'
-              }`}
+              className="relative deco-corners p-6 sm:p-8 bg-[#141210]/85 hover:bg-[#1A1714] transition-all duration-500"
             >
               <span className="corner-tl" /><span className="corner-tr" /><span className="corner-bl" /><span className="corner-br" />
-
-              {s.featured && (
-                <div className="absolute -top-3 left-8 bg-[#0A0908] px-3 py-1 border border-[#D4A84B]/40">
-                  <span className="font-mono text-[9px] tracking-[0.4em] text-[#F0CF65] uppercase">{language === 'en' ? 'Featured' : 'แนะนำ'}</span>
-                </div>
-              )}
-
-              <s.icon className={`w-7 h-7 mb-6 ${s.featured ? 'text-[#F0CF65]' : 'text-[#D4A84B]'}`} />
-              <h3 className="font-serif italic text-2xl text-[#F4F1EC] mb-2">{t(s.key)}</h3>
-              <p className="text-sm text-[#F4F1EC]/55 mb-4">{s.tag}</p>
+              <Quote className="w-7 h-7 mb-6 text-[#D4A84B]" />
+              <p className="font-display italic text-xl text-[#F4F1EC]/80 leading-relaxed mb-6">
+                "{language === 'en' ? item.quote.en : item.quote.th}"
+              </p>
               <div className="gold-divider mb-4" />
-              <p className="font-mono text-[11px] tracking-[0.2em] text-[#D4A84B] uppercase">{s.capacity}</p>
+              <h3 className="font-serif italic text-2xl text-[#F4F1EC] mb-1">{item.name}</h3>
+              <p className="font-mono text-[10px] tracking-[0.25em] text-[#D4A84B] uppercase">{language === 'en' ? item.role.en : item.role.th}</p>
             </div>
           ))}
         </div>
 
-        {/* Floor plan + CTA */}
         <div className="grid lg:grid-cols-12 gap-10 items-center" data-reveal>
           <div className="lg:col-span-7 relative deco-corners aspect-[16/9] overflow-hidden">
             <span className="corner-tl" /><span className="corner-tr" /><span className="corner-bl" /><span className="corner-br" />
             <img src="/seating_area.jpg" alt="The Mellowship seating" className="w-full h-full object-cover img-warm" />
             <div className="absolute inset-0 bg-gradient-to-r from-[#0A0908]/70 via-transparent to-transparent" />
             <div className="absolute bottom-6 left-6">
-              <p className="font-mono text-[10px] tracking-[0.4em] text-[#F0CF65] uppercase">{language === 'en' ? 'The lounge — 9:42 PM' : 'เลานจ์ — 21:42 น.'}</p>
+              <p className="font-mono text-[10px] tracking-[0.4em] text-[#F0CF65] uppercase">{language === 'en' ? 'The lounge · 9:42 PM' : 'เลานจ์ · 21:42 น.'}</p>
             </div>
           </div>
           <div className="lg:col-span-5">
             <h3 className="font-serif italic text-3xl md:text-4xl text-[#F4F1EC] mb-4">
-              {language === 'en' ? 'Reserve before sundown' : 'จองก่อนพระอาทิตย์ตก'}
+              {language === 'en' ? 'Limited by design' : 'จำกัดจำนวนอย่างตั้งใจ'}
             </h3>
             <p className="text-[#F4F1EC]/65 leading-relaxed mb-8">
               {language === 'en'
-                ? 'We hold a small list each night. A quick call is the easiest way to keep your spot.'
-                : 'เราจองรายชื่อสั้นๆ ในแต่ละคืน โทรเข้ามาคือวิธีที่ง่ายที่สุดในการรักษาที่นั่ง'}
+                ? 'Limited seating keeps the room balanced, quiet, and focused on the performance.'
+                : 'จำนวนที่นั่งจำกัดช่วยให้ห้องสมดุล เงียบพอดี และจดจ่อกับการแสดง'}
             </p>
-            <button onClick={handleReserve} className="btn-gold">
+            <button onClick={() => window.open('tel:053908888', '_self')} className="btn-gold">
               {t('stage.cta')}
-              <ArrowRight className="w-4 h-4" />
             </button>
           </div>
         </div>

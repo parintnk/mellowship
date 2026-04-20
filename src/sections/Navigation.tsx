@@ -4,11 +4,10 @@ import { Menu, X, Phone } from 'lucide-react';
 
 const NAV_ITEMS = [
   { en: 'Home', th: 'หน้าแรก', id: 'hero' },
-  { en: 'Lineup', th: 'รายการ', id: 'lineup' },
-  { en: 'Experience', th: 'บรรยากาศ', id: 'experience' },
-  { en: 'Menu', th: 'เมนู', id: 'menu' },
-  { en: 'Stage', th: 'เวที', id: 'stage' },
-  { en: 'Event', th: 'อีเวนต์', id: 'event' },
+  { en: 'Heritage', th: 'เรื่องราว', id: 'experience' },
+  { en: 'Schedule', th: 'ตาราง', id: 'lineup' },
+  { en: 'Culinary', th: 'อาหาร', id: 'menu' },
+  { en: 'Patrons', th: 'รีวิว', id: 'stage' },
   { en: 'Contact', th: 'ติดต่อ', id: 'contact' },
 ];
 
@@ -62,7 +61,7 @@ export default function Navigation() {
           {/* Desktop nav */}
           <div className="hidden lg:flex items-center gap-10">
             <ul className="flex items-center gap-7">
-              {NAV_ITEMS.slice(1, 6).map((item) => (
+              {NAV_ITEMS.slice(1).map((item) => (
                 <li key={item.id}>
                   <button
                     onClick={() => scrollTo(item.id)}
