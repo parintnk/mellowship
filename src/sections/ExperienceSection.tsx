@@ -65,7 +65,7 @@ export default function ExperienceSection() {
 
           <div className="overflow-x-auto pb-4 -mx-5 px-5 sm:mx-0 sm:px-0">
             <div className="flex gap-4 sm:gap-5 min-w-max">
-              {reels.map((reel, index) => (
+              {reels.map((reel) => (
                 <div
                   key={reel.title}
                   className="relative deco-corners w-[190px] sm:w-[220px] lg:w-[240px] flex-shrink-0 bg-[#141210] p-2 shadow-[0_18px_55px_rgba(0,0,0,0.3)]"
