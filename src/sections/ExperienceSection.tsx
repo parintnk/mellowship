@@ -35,18 +35,9 @@ export default function ExperienceSection() {
         void video.play().catch(() => undefined);
       } else {
         video.pause();
-        if (video.readyState >= 1) {
-          video.currentTime = Math.min(0.1, video.duration || 0.1);
-        }
       }
     });
   }, [activeVideo]);
-
-  const showThumbnailFrame = (video: HTMLVideoElement, index: number) => {
-    if (index !== activeVideo) {
-      video.currentTime = Math.min(0.1, video.duration || 0.1);
-    }
-  };
 
   return (
     <section ref={ref} id="experience" className="relative section-pad bg-[#0A0908] overflow-hidden">
@@ -90,15 +81,24 @@ export default function ExperienceSection() {
                 >
                   <span className="corner-tl" /><span className="corner-tr" /><span className="corner-bl" /><span className="corner-br" />
                   <div className="relative aspect-[9/16] overflow-hidden bg-[#0F0D0B]">
+                    <img
+                      src={video.poster}
+                      alt=""
+                      aria-hidden="true"
+                      className={`absolute inset-0 w-full h-full object-cover img-warm transition-opacity duration-300 ${
+                        activeVideo === index ? 'opacity-0' : 'opacity-100'
+                      }`}
+                    />
                     <video
                       ref={(node) => { videoRefs.current[index] = node; }}
                       src={video.src}
                       poster={video.poster}
-                      className="absolute inset-0 w-full h-full object-cover img-warm"
+                      className={`absolute inset-0 w-full h-full object-cover img-warm transition-opacity duration-300 ${
+                        activeVideo === index ? 'opacity-100' : 'opacity-0'
+                      }`}
                       muted
                       playsInline
-                      preload="auto"
-                      onLoadedMetadata={(event) => showThumbnailFrame(event.currentTarget, index)}
+                      preload="metadata"
                       onEnded={() => setActiveVideo((index + 1) % videos.length)}
                     />
                   </div>
