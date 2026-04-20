@@ -18,13 +18,13 @@ export default function HeroSection() {
       {/* Cinematic stage image */}
       <div className="absolute inset-0">
         <img
-          src="/sax_player.jpg"
-          alt="Saxophonist performing under warm stage light"
+          src="/photo/Head.jpg"
+          alt="The Mellowship lounge interior with live stage"
           width={1920}
-          height={1080}
+          height={1920}
           fetchPriority="high"
           decoding="async"
-          className="w-full h-full object-cover img-warm"
+          className="w-full h-full object-cover object-center img-warm"
         />
         {/* Layered atmosphere */}
         <div className="absolute inset-0 bg-gradient-to-b from-[#0A0908]/85 via-[#0A0908]/55 to-[#0A0908]" />

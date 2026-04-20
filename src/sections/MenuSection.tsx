@@ -42,7 +42,7 @@ export default function MenuSection() {
           <div className="lg:col-span-5 space-y-8 lg:space-y-10 order-2 lg:order-1" data-reveal data-delay="100">
             <div className="relative deco-corners aspect-square lg:aspect-[3/4]">
               <span className="corner-tl" /><span className="corner-tr" /><span className="corner-bl" /><span className="corner-br" />
-              <img src="/stage_lights.jpg" alt="Warm lounge lighting and refined evening atmosphere" className="w-full h-full object-cover img-warm" />
+              <img src="/photo/A Symphony of flavors.jpg" alt="A symphony of flavors from the kitchen" className="w-full h-full object-cover img-warm" />
               <div className="absolute inset-0 bg-gradient-to-t from-[#0A0908]/70 via-transparent to-transparent" />
             </div>
 

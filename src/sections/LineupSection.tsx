@@ -134,7 +134,7 @@ export default function LineupSection() {
             <div className="relative deco-corners">
               <span className="corner-tl" /><span className="corner-tr" /><span className="corner-bl" /><span className="corner-br" />
               <div className="aspect-[3/4] overflow-hidden relative">
-                <img src="/stage_spotlight.jpg" alt="Double bass and stage spotlight" className="w-full h-full object-cover img-warm" />
+                <img src="/photo/Live Performance Schedule.jpg" alt="Live performance schedule" className="w-full h-full object-cover img-warm" />
                 <div className="absolute inset-0 bg-gradient-to-t from-[#0A0908]/80 via-transparent to-transparent" />
               </div>
             </div>
