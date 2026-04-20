@@ -113,9 +113,10 @@ export default function Navigation() {
 
       {/* Full-screen overlay menu */}
       <div
-        className={`fixed inset-0 z-[200] bg-[#0A0908] transition-opacity duration-500 ${
-          isMenuOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'
+        className={`fixed inset-0 z-[200] bg-[#0A0908] transition-[opacity,transform] duration-500 ease-out ${
+          isMenuOpen ? 'translate-x-0 opacity-100 pointer-events-auto' : 'translate-x-full opacity-0 pointer-events-none'
         }`}
+        aria-hidden={!isMenuOpen}
       >
         <div className="grain-overlay" />
         <div className="h-full flex flex-col container-deco">

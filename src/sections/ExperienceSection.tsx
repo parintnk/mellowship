@@ -11,14 +11,17 @@ export default function ExperienceSection() {
   const videos = [
     {
       src: '/video/VDO1.mp4',
+      poster: '/stage_spotlight.jpg',
       title: language === 'en' ? 'Soundcheck' : 'ซาวด์เช็ก',
     },
     {
       src: '/video/VDO2.mp4',
+      poster: '/sax_player.jpg',
       title: language === 'en' ? 'Sax Feature' : 'แซกโซโฟน',
     },
     {
       src: '/video/VDO3.mp4',
+      poster: '/seating_area.jpg',
       title: language === 'en' ? 'Lounge Mood' : 'บรรยากาศเลานจ์',
     },
   ];
@@ -32,10 +35,18 @@ export default function ExperienceSection() {
         void video.play().catch(() => undefined);
       } else {
         video.pause();
-        video.currentTime = 0;
+        if (video.readyState >= 1) {
+          video.currentTime = Math.min(0.1, video.duration || 0.1);
+        }
       }
     });
   }, [activeVideo]);
+
+  const showThumbnailFrame = (video: HTMLVideoElement, index: number) => {
+    if (index !== activeVideo) {
+      video.currentTime = Math.min(0.1, video.duration || 0.1);
+    }
+  };
 
   return (
     <section ref={ref} id="experience" className="relative section-pad bg-[#0A0908] overflow-hidden">
@@ -82,10 +93,12 @@ export default function ExperienceSection() {
                     <video
                       ref={(node) => { videoRefs.current[index] = node; }}
                       src={video.src}
+                      poster={video.poster}
                       className="absolute inset-0 w-full h-full object-cover img-warm"
                       muted
                       playsInline
-                      preload="metadata"
+                      preload="auto"
+                      onLoadedMetadata={(event) => showThumbnailFrame(event.currentTarget, index)}
                       onEnded={() => setActiveVideo((index + 1) % videos.length)}
                     />
                   </div>
