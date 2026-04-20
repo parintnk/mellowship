@@ -30,7 +30,7 @@ export default function MenuSection() {
           <p className="eyebrow mx-auto justify-center mb-5">{language === 'en' ? 'Culinary Arts' : 'ศิลปะแห่งรสชาติ'}</p>
           <h2 className="font-serif text-[clamp(40px,6vw,84px)] leading-[1.05] mb-6">
             <span className="block text-[#F4F1EC]">{language === 'en' ? 'A Symphony' : 'ซิมโฟนี'}</span>
-            <span className="block italic gold-text">{language === 'en' ? 'of flavors' : 'แห่งรสชาติ'}</span>
+            <span className="block italic gold-text">{language === 'en' ? 'of Flavors' : 'แห่งรสชาติ'}</span>
           </h2>
           <p className="font-display italic text-xl text-[#F4F1EC]/70 max-w-2xl mx-auto leading-relaxed">
             {t('menu.desc')}
@@ -120,7 +120,7 @@ export default function MenuSection() {
             </div>
 
             <button
-              onClick={() => window.open('tel:053908888', '_self')}
+              onClick={() => window.open('tel:021088888', '_self')}
               className="btn-ghost"
             >
               <FileText className="w-4 h-4" />

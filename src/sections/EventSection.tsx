@@ -6,7 +6,7 @@ export default function EventSection() {
   const { t, language } = useLanguage();
   const ref = useReveal<HTMLElement>();
 
-  const handleGetTickets = () => window.open('tel:053908888', '_self');
+  const handleGetTickets = () => window.open('tel:021088888', '_self');
 
   return (
     <section ref={ref} id="event" className="relative section-pad bg-[#0A0908] overflow-hidden">

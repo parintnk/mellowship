@@ -63,7 +63,7 @@ export default function LineupSection() {
   const { t, language } = useLanguage();
   const ref = useReveal<HTMLElement>();
 
-  const handleReserve = () => window.open('tel:053908888', '_self');
+  const handleReserve = () => window.open('tel:021088888', '_self');
 
   return (
     <section ref={ref} id="lineup" className="relative section-pad bg-[#0A0908] overflow-hidden">
@@ -95,7 +95,7 @@ export default function LineupSection() {
               <div className="flex items-center gap-3">
                 <CalendarDays className="w-5 h-5 text-[#D4A84B]" />
                 <span className="font-mono text-[10px] tracking-[0.35em] text-[#D4A84B] uppercase">
-                  {language === 'en' ? 'Doors 7:30PM' : 'เปิด 19:30'}
+                  {language === 'en' ? 'Doors 7:30 PM' : 'เปิด 19:30'}
                 </span>
               </div>
               <span className="font-mono text-[10px] tracking-[0.35em] text-[#F4F1EC]/50 uppercase">{t('lineup.time')}</span>
@@ -106,7 +106,7 @@ export default function LineupSection() {
                 <article key={item.artist} className="grid md:grid-cols-[120px_110px_1fr] gap-4 py-5" data-reveal data-delay={String(index * 60)}>
                   <div>
                     <p className="font-serif italic text-xl text-[#F4F1EC]">{language === 'en' ? item.day.en : item.day.th}</p>
-                    <p className="font-mono text-[10px] tracking-[0.3em] text-[#F4F1EC]/45 uppercase mt-1">8:00 PM</p>
+                    <p className="font-mono text-[10px] tracking-[0.3em] text-[#F4F1EC]/45 uppercase mt-1">8 PM</p>
                   </div>
                   <div>
                     <span className="inline-flex items-center gap-2 border border-[#D4A84B]/35 px-3 py-1.5 font-mono text-[10px] tracking-[0.25em] text-[#D4A84B] uppercase">

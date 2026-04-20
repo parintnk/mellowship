@@ -6,7 +6,7 @@ export default function HeroSection() {
   const { t, language } = useLanguage();
   const ref = useReveal<HTMLElement>({ threshold: 0.05 });
 
-  const handleBook = () => window.open('tel:053908888', '_self');
+  const handleBook = () => window.open('tel:021088888', '_self');
   const scrollToLineup = () => document.getElementById('lineup')?.scrollIntoView({ behavior: 'smooth' });
 
   return (

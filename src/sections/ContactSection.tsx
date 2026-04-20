@@ -6,7 +6,7 @@ export default function ContactSection() {
   const { t, language } = useLanguage();
   const ref = useReveal<HTMLElement>();
 
-  const handleCall = () => window.open('tel:053908888', '_self');
+  const handleCall = () => window.open('tel:021088888', '_self');
   const handleFacebook = () => window.open('https://www.facebook.com/themellowshipjazz/', '_blank');
   const handleInstagram = () => window.open('https://www.instagram.com/themellowshipjazz/', '_blank');
 
@@ -41,7 +41,7 @@ export default function ContactSection() {
                 <Phone className="w-3.5 h-3.5 text-[#D4A84B]" />
                 <span className="font-mono text-[10px] tracking-[0.4em] text-[#D4A84B] uppercase">{language === 'en' ? 'Reservations' : 'จองโต๊ะ'}</span>
               </div>
-              <a href="tel:053908888" className="font-serif text-3xl text-[#F4F1EC] hover:text-[#F0CF65] transition-colors">
+              <a href="tel:021088888" className="font-serif text-3xl text-[#F4F1EC] hover:text-[#F0CF65] transition-colors">
                 {t('contact.phone')}
               </a>
             </div>
