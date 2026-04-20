@@ -1,23 +1,33 @@
 import { useLanguage } from '../context/LanguageContext';
 import { useReveal } from '../hooks/useReveal';
-import { Armchair, AudioLines, Music, ShieldCheck, ArrowRight } from 'lucide-react';
+import { Instagram, Play } from 'lucide-react';
 
 export default function ExperienceSection() {
-  const { t, language } = useLanguage();
+  const { language } = useLanguage();
   const ref = useReveal<HTMLElement>();
 
-  const items = [
-    { num: '01', icon: Music, key: 'exp.music',
-      desc: language === 'en' ? 'Weekly performances from Thailand’s finest jazz maestros and international guest artists.' : 'การแสดงประจำสัปดาห์โดยศิลปินแจ๊สชั้นนำของไทยและศิลปินรับเชิญจากต่างประเทศ' },
-    { num: '02', icon: ShieldCheck, key: 'exp.food',
-      desc: language === 'en' ? 'Limited seating, measured lighting, and a room designed for focused conversation between sets.' : 'ที่นั่งจำกัด แสงสลัวพอดี และพื้นที่ที่ออกแบบเพื่อบทสนทนาอย่างเป็นส่วนตัวระหว่างเซ็ต' },
-    { num: '03', icon: AudioLines, key: 'exp.acoustics',
-      desc: language === 'en' ? 'Acoustics tuned so every brush, breath, and bass line arrives with warmth and clarity.' : 'อะคูสติกที่ปรับจูนให้ทุกเสียงแปรง ลมหายใจ และไลน์เบสถ่ายทอดอย่างอบอุ่นและชัดเจน' },
-    { num: '04', icon: Armchair, key: 'exp.times',
-      desc: language === 'en' ? 'A timeless social space for listeners who appreciate the finer notes in life.' : 'โซเชียลสเปซเหนือกาลเวลาสำหรับผู้ฟังที่เห็นคุณค่าในรายละเอียดของดนตรี' },
+  const reels = [
+    {
+      image: '/stage_spotlight.jpg',
+      title: language === 'en' ? 'Soundcheck' : 'ซาวด์เช็ก',
+      duration: '0:15',
+    },
+    {
+      image: '/sax_player.jpg',
+      title: language === 'en' ? 'Sax Feature' : 'แซกโซโฟน',
+      duration: '0:22',
+    },
+    {
+      image: '/seating_area.jpg',
+      title: language === 'en' ? 'Lounge Mood' : 'บรรยากาศเลานจ์',
+      duration: '0:18',
+    },
+    {
+      image: '/stage_drums.jpg',
+      title: language === 'en' ? 'Late Set' : 'เซ็ตดึก',
+      duration: '0:20',
+    },
   ];
-
-  const handleViewMenu = () => document.getElementById('menu')?.scrollIntoView({ behavior: 'smooth' });
 
   return (
     <section ref={ref} id="experience" className="relative section-pad bg-[#0A0908] overflow-hidden">
@@ -28,53 +38,67 @@ export default function ExperienceSection() {
       </div>
 
       <div className="relative container-deco">
-        <div className="text-center mb-20" data-reveal>
-          <p className="eyebrow mx-auto justify-center mb-5">
+        <div className="max-w-3xl mb-10 sm:mb-14" data-reveal>
+          <p className="eyebrow mb-5">
             {language === 'en' ? 'Our Heritage' : 'เรื่องราวของเรา'}
           </p>
-          <h2 className="font-serif text-[clamp(40px,6vw,84px)] leading-[1.05]">
+          <h2 className="font-serif text-[clamp(40px,6vw,78px)] leading-[1.05] mb-6">
             <span className="block text-[#F4F1EC]">{language === 'en' ? 'Beyond the music,' : 'เหนือกว่าเสียงดนตรี'}</span>
             <span className="block italic gold-text">{language === 'en' ? "it's the feeling." : 'คือความรู้สึก'}</span>
           </h2>
-          <p className="font-display italic text-xl text-[#F4F1EC]/70 max-w-3xl mx-auto leading-relaxed mt-8">
+          <p className="font-display italic text-xl text-[#F4F1EC]/70 leading-relaxed">
             {language === 'en'
-              ? 'We provide a sanctuary for those who appreciate the finer notes in life. Designed for true jazz enthusiasts, our space offers acoustics that wrap around you like a warm embrace.'
-              : 'เราสร้างสถานที่พักใจสำหรับผู้ที่เห็นคุณค่าในรายละเอียดอันประณีตของชีวิต พื้นที่ของเราออกแบบเพื่อคนรักแจ๊สตัวจริง พร้อมอะคูสติกที่โอบล้อมคุณอย่างอบอุ่น'}
+              ? 'A sanctuary for true jazz enthusiasts, shaped by warm acoustics, private seating, and the quiet energy of the room.'
+              : 'พื้นที่พักใจสำหรับคนรักแจ๊สตัวจริง ที่หล่อหลอมด้วยอะคูสติกอบอุ่น ที่นั่งเป็นส่วนตัว และพลังเงียบๆ ของห้อง'}
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-x-16 gap-y-10 sm:gap-y-14 mb-12 sm:mb-16">
-          {items.map((item) => (
-            <div key={item.num} className="group flex gap-4 sm:gap-6 items-start" data-reveal>
-              <div className="deco-number flex-shrink-0 leading-none">{item.num}</div>
-              <div className="flex-1 pt-1 sm:pt-3 min-w-0">
-                <div className="flex items-center gap-2 sm:gap-3 mb-2 sm:mb-3">
-                  <item.icon className="w-4 h-4 sm:w-5 sm:h-5 text-[#D4A84B] flex-shrink-0" />
-                  <h3 className="font-serif italic text-xl sm:text-2xl md:text-3xl text-[#F4F1EC]">{t(item.key)}</h3>
-                </div>
-                <div className="gold-divider w-12 mb-3 sm:mb-4 group-hover:w-24 transition-all duration-500" />
-                <p className="text-sm sm:text-base text-[#F4F1EC]/65 leading-relaxed font-light">{item.desc}</p>
-              </div>
-            </div>
-          ))}
-        </div>
+        <div data-reveal data-delay="120">
+          <div className="flex items-end justify-between gap-6 mb-6">
+            <p className="font-mono text-[10px] tracking-[0.35em] text-[#D4A84B] uppercase">
+              {language === 'en' ? 'Instagram Reels Preview' : 'ตัวอย่าง Instagram Reels'}
+            </p>
+            <p className="hidden sm:block text-sm text-[#F4F1EC]/45 max-w-sm text-right">
+              {language === 'en' ? 'Mock placements for future IG Reels embeds.' : 'ตำแหน่งจำลองสำหรับฝัง IG Reels ภายหลัง'}
+            </p>
+          </div>
 
-        {/* Limited seating ribbon */}
-        <div className="relative mt-12 sm:mt-16 deco-corners bg-gradient-to-r from-[#141210] via-[#1A1714] to-[#141210] py-8 sm:py-10 px-6 sm:px-8 md:px-16" data-reveal>
-          <span className="corner-tl" /><span className="corner-tr" /><span className="corner-bl" /><span className="corner-br" />
-          <div className="flex flex-col md:flex-row items-center md:items-start justify-between gap-6 md:gap-8 text-center md:text-left">
-            <div>
-              <p className="font-mono text-[10px] tracking-[0.35em] sm:tracking-[0.4em] text-[#D4A84B] uppercase mb-2">{t('happyhour.label')}</p>
-              <h3 className="font-serif italic text-2xl sm:text-3xl md:text-4xl text-[#F4F1EC]">{t('happyhour.deal')}</h3>
-              <p className="font-mono text-xs sm:text-sm text-[#F4F1EC]/60 mt-2 tracking-wider">{t('happyhour.time')}</p>
-            </div>
-            <div className="hidden md:block h-20 w-px bg-[#D4A84B]/30" />
-            <div className="text-center md:text-right">
-              <p className="font-mono text-[10px] tracking-[0.35em] sm:tracking-[0.4em] text-[#D4A84B]/70 uppercase mb-3">{t('exp.hours')}</p>
-              <button onClick={handleViewMenu} className="btn-ghost">
-                {t('exp.cta')}
-                <ArrowRight className="w-4 h-4" />
-              </button>
+          <div className="overflow-x-auto pb-4 -mx-5 px-5 sm:mx-0 sm:px-0">
+            <div className="flex gap-4 sm:gap-5 min-w-max">
+              {reels.map((reel, index) => (
+                <div
+                  key={reel.title}
+                  className="relative deco-corners w-[190px] sm:w-[220px] lg:w-[240px] flex-shrink-0 bg-[#141210] p-2 shadow-[0_18px_55px_rgba(0,0,0,0.3)]"
+                >
+                  <span className="corner-tl" /><span className="corner-tr" /><span className="corner-bl" /><span className="corner-br" />
+                  <div className="relative aspect-[9/16] overflow-hidden bg-[#0F0D0B]">
+                    <img src={reel.image} alt="" className="absolute inset-0 w-full h-full object-cover img-warm opacity-50" />
+                    <div className="absolute inset-0 bg-gradient-to-b from-[#0A0908]/30 via-[#0A0908]/5 to-[#0A0908]/85" />
+                    <div className="absolute inset-x-3 top-3 flex items-center justify-between">
+                      <div className="flex items-center gap-1.5">
+                        <Instagram className="w-3.5 h-3.5 text-[#F0CF65]" />
+                        <span className="font-mono text-[8px] tracking-[0.2em] text-[#F4F1EC]/75 uppercase">Reels</span>
+                      </div>
+                      <span className="h-1.5 w-1.5 rounded-full bg-[#F0CF65] animate-pulse" />
+                    </div>
+                    <div className="absolute inset-0 flex items-center justify-center">
+                      <div className="flex h-11 w-11 sm:h-12 sm:w-12 items-center justify-center rounded-full border border-[#D4A84B]/60 bg-[#0A0908]/55 backdrop-blur-sm">
+                        <Play className="w-5 h-5 text-[#F0CF65] fill-[#F0CF65] translate-x-0.5" />
+                      </div>
+                    </div>
+                    <div className="absolute inset-x-3 bottom-3 space-y-2">
+                      <div className="h-1.5 w-3/4 bg-[#F4F1EC]/25 animate-pulse" />
+                      <div className="h-1.5 w-1/2 bg-[#F4F1EC]/15 animate-pulse" />
+                      <div className="flex items-center justify-between pt-1">
+                        <span className="font-mono text-[8px] tracking-[0.18em] text-[#D4A84B] uppercase">
+                          {reel.title}
+                        </span>
+                        <span className="font-mono text-[8px] text-[#F4F1EC]/45">{reel.duration}</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              ))}
             </div>
           </div>
         </div>
