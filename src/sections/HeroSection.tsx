@@ -67,7 +67,7 @@ export default function HeroSection() {
       </div>
 
       {/* Scroll cue */}
-      <button
+      {/* <button
         onClick={scrollToLineup}
         aria-label="Scroll to lineup"
         className="hidden sm:flex absolute bottom-8 left-1/2 -translate-x-1/2 z-10 flex-col items-center gap-2 text-[#D4A84B]/70 hover:text-[#F0CF65] transition-colors group"
@@ -75,7 +75,7 @@ export default function HeroSection() {
       >
         <span className="font-mono text-[9px] tracking-[0.4em] uppercase">Scroll</span>
         <ChevronDown className="w-4 h-4 animate-bounce" style={{ animationDuration: '2.4s' }} />
-      </button>
+      </button> */}
     </section>
   );
 }
