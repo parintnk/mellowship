@@ -23,16 +23,16 @@ export default function MenuSection() {
   const ref = useReveal<HTMLElement>();
 
   return (
-    <section ref={ref} id="menu" className="relative section-pad bg-[#0A0908]">
+    <section ref={ref} id="menu" className="relative section-pad bg-[#14100E]">
       <div className="container-deco">
         {/* Header */}
         <div className="text-center mb-20" data-reveal>
           <p className="eyebrow mx-auto justify-center mb-5">{language === 'en' ? 'Culinary Arts' : 'ศิลปะแห่งรสชาติ'}</p>
-          <h2 className="font-serif text-[clamp(40px,6vw,84px)] leading-[1.05] mb-6">
-            <span className="block text-[#F4F1EC]">{language === 'en' ? 'A Symphony' : 'ซิมโฟนี'}</span>
+          <h2 className="font-serif text-[clamp(38px,5.4vw,74px)] leading-[1.05] mb-6">
+            <span className="block text-[#F7EFE2]">{language === 'en' ? 'A Symphony' : 'ซิมโฟนี'}</span>
             <span className="block italic gold-text">{language === 'en' ? 'of Flavors' : 'แห่งรสชาติ'}</span>
           </h2>
-          <p className="font-display italic text-xl text-[#F4F1EC]/70 max-w-2xl mx-auto leading-relaxed">
+          <p className="font-display italic text-xl text-[#F7EFE2]/72 max-w-2xl mx-auto leading-relaxed">
             {t('menu.desc')}
           </p>
         </div>
@@ -43,18 +43,18 @@ export default function MenuSection() {
             <div className="relative deco-corners aspect-square lg:aspect-[3/4]">
               <span className="corner-tl" /><span className="corner-tr" /><span className="corner-bl" /><span className="corner-br" />
               <img src="/photo/A Symphony of flavors.jpg" alt="A symphony of flavors from the kitchen" className="w-full h-full object-cover img-warm" />
-              <div className="absolute inset-0 bg-gradient-to-t from-[#0A0908]/70 via-transparent to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#14100E]/60 via-transparent to-transparent" />
             </div>
 
             {/* Hours card */}
-            <div className="relative deco-corners bg-[#141210] p-6 sm:p-8">
+            <div className="relative deco-corners bg-[#1D1815] p-6 sm:p-8 shadow-[0_10px_30px_rgba(0,0,0,0.16)]">
               <span className="corner-tl" /><span className="corner-tr" /><span className="corner-bl" /><span className="corner-br" />
               <div className="flex items-center gap-3 mb-4">
-                <Clock className="w-4 h-4 text-[#D4A84B]" />
-                <span className="font-mono text-[10px] tracking-[0.35em] sm:tracking-[0.4em] text-[#D4A84B] uppercase">{t('menu.hours')}</span>
+                <Clock className="w-4 h-4 text-[#E0A24B]" />
+                <span className="font-mono text-[10px] tracking-[0.22em] sm:tracking-[0.24em] text-[#E0A24B] uppercase">{t('menu.hours')}</span>
               </div>
-              <p className="font-serif italic text-xl text-[#F4F1EC] mb-1">{t('menu.hours.detail')}</p>
-              <p className="text-sm text-[#F4F1EC]/50">{t('menu.closed')}</p>
+              <p className="font-serif italic text-xl text-[#F7EFE2] mb-1">{t('menu.hours.detail')}</p>
+              <p className="text-sm text-[#F7EFE2]/55">{t('menu.closed')}</p>
             </div>
           </div>
 
@@ -63,11 +63,11 @@ export default function MenuSection() {
             {/* Seasonal beverages */}
             <div>
               <div className="flex items-baseline justify-between mb-6">
-                <h3 className="font-serif italic text-3xl md:text-4xl text-[#F4F1EC] flex items-center gap-3">
-                  <GlassWater className="w-6 h-6 text-[#D4A84B]" />
+                <h3 className="font-serif italic text-3xl md:text-4xl text-[#F7EFE2] flex items-center gap-3">
+                  <GlassWater className="w-6 h-6 text-[#E0A24B]" />
                   {t('menu.refreshments')}
                 </h3>
-                <div className="flex items-center gap-3 text-[#F4F1EC]/40 text-xs font-mono tracking-widest">
+                <div className="flex items-center gap-3 text-[#F7EFE2]/45 text-xs font-mono tracking-widest">
                   <Leaf className="w-3 h-3" />
                   <Coffee className="w-3 h-3" />
                 </div>
@@ -77,12 +77,12 @@ export default function MenuSection() {
                 {refreshments.map((d) => (
                   <li key={d.name.en}>
                     <div className="dot-leader">
-                      <span className="font-serif text-base sm:text-lg md:text-xl text-[#F4F1EC] flex-shrink min-w-0">{language === 'en' ? d.name.en : d.name.th}</span>
+                      <span className="font-serif text-base sm:text-lg md:text-xl text-[#F7EFE2] flex-shrink min-w-0">{language === 'en' ? d.name.en : d.name.th}</span>
                       <span className="dots" />
-                      <span className="font-mono text-sm text-[#D4A84B] flex-shrink-0">{d.price}</span>
+                      <span className="font-mono text-sm text-[#E0A24B] flex-shrink-0">{d.price}</span>
                     </div>
                     {d.desc && (
-                      <p className="text-sm text-[#F4F1EC]/50 italic mt-1 font-light">
+                      <p className="text-sm text-[#F7EFE2]/55 italic mt-1 font-light">
                         {language === 'en' ? d.desc.en : d.desc.th}
                       </p>
                     )}
@@ -94,23 +94,23 @@ export default function MenuSection() {
             {/* Signature dishes */}
             <div>
               <div className="flex items-baseline justify-between mb-6">
-                <h3 className="font-serif italic text-3xl md:text-4xl text-[#F4F1EC] flex items-center gap-3">
-                  <UtensilsCrossed className="w-6 h-6 text-[#D4A84B]" />
+                <h3 className="font-serif italic text-3xl md:text-4xl text-[#F7EFE2] flex items-center gap-3">
+                  <UtensilsCrossed className="w-6 h-6 text-[#E0A24B]" />
                   {t('menu.bites')}
                 </h3>
-                <Cake className="w-3 h-3 text-[#F4F1EC]/40" />
+                <Cake className="w-3 h-3 text-[#F7EFE2]/45" />
               </div>
               <div className="gold-divider mb-6" />
               <ul className="space-y-5">
                 {dishes.map((d) => (
                   <li key={d.name.en}>
                     <div className="dot-leader">
-                      <span className="font-serif text-base sm:text-lg md:text-xl text-[#F4F1EC] flex-shrink min-w-0">{language === 'en' ? d.name.en : d.name.th}</span>
+                      <span className="font-serif text-base sm:text-lg md:text-xl text-[#F7EFE2] flex-shrink min-w-0">{language === 'en' ? d.name.en : d.name.th}</span>
                       <span className="dots" />
-                      <span className="font-mono text-sm text-[#D4A84B] flex-shrink-0">{d.price}</span>
+                      <span className="font-mono text-sm text-[#E0A24B] flex-shrink-0">{d.price}</span>
                     </div>
                     {d.desc && (
-                      <p className="text-sm text-[#F4F1EC]/50 italic mt-1 font-light">
+                      <p className="text-sm text-[#F7EFE2]/55 italic mt-1 font-light">
                         {language === 'en' ? d.desc.en : d.desc.th}
                       </p>
                     )}

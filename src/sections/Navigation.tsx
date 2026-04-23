@@ -42,7 +42,7 @@ export default function Navigation() {
       <nav
         className={`fixed top-0 left-0 right-0 z-[100] transition-all duration-500 ${
           isScrolled
-            ? 'bg-[#0A0908]/85 backdrop-blur-xl py-3 border-b border-[#D4A84B]/15'
+            ? 'bg-[#14100E]/88 backdrop-blur-lg py-3 border-b border-[#E0A24B]/12'
             : 'bg-transparent py-5'
         }`}
       >
@@ -53,9 +53,9 @@ export default function Navigation() {
             className="group flex items-center gap-3"
             aria-label="The Mellowship — home"
           >
-            <span className="hidden sm:inline font-mono text-[10px] tracking-[0.4em] text-[#D4A84B] group-hover:text-[#F0CF65] transition-colors">EST · 1925</span>
-            <span className="hidden sm:inline-block h-4 w-px bg-[#D4A84B]/40" />
-            <span className="font-serif italic text-base md:text-lg text-[#F4F1EC] tracking-wide">The Mellowship</span>
+            <span className="hidden sm:inline font-mono text-[10px] tracking-[0.24em] text-[#E0A24B] group-hover:text-[#F2B764] transition-colors">EST · 1925</span>
+            <span className="hidden sm:inline-block h-4 w-px bg-[#E0A24B]/28" />
+            <span className="font-serif italic text-base md:text-lg text-[#F7EFE2] tracking-wide">The Mellowship</span>
           </button>
 
           {/* Desktop nav */}
@@ -65,10 +65,10 @@ export default function Navigation() {
                 <li key={item.id}>
                   <button
                     onClick={() => scrollTo(item.id)}
-                    className="relative font-mono text-[11px] tracking-[0.25em] uppercase text-[#F4F1EC]/80 hover:text-[#F0CF65] transition-colors group"
+                    className="relative font-mono text-[11px] tracking-[0.18em] uppercase text-[#F7EFE2]/78 hover:text-[#E0A24B] transition-colors group"
                   >
                     {language === 'en' ? item.en : item.th}
-                    <span className="absolute -bottom-2 left-0 right-0 h-px bg-[#D4A84B] scale-x-0 group-hover:scale-x-100 origin-left transition-transform duration-300" />
+                    <span className="absolute -bottom-2 left-0 right-0 h-px bg-[#E0A24B] scale-x-0 group-hover:scale-x-100 origin-left transition-transform duration-300" />
                   </button>
                 </li>
               ))}
@@ -81,13 +81,13 @@ export default function Navigation() {
             <div className="hidden md:flex items-center text-[11px] font-mono">
               <button
                 onClick={() => language !== 'en' && toggleLanguage()}
-                className={`px-2.5 py-1 transition-colors ${language === 'en' ? 'text-[#F0CF65]' : 'text-[#F4F1EC]/40 hover:text-[#F4F1EC]/80'}`}
+                className={`px-2.5 py-1 transition-colors ${language === 'en' ? 'text-[#E0A24B]' : 'text-[#F7EFE2]/45 hover:text-[#F7EFE2]/80'}`}
                 aria-pressed={language === 'en'}
               >EN</button>
-              <span className="text-[#D4A84B]/40">/</span>
+              <span className="text-[#E0A24B]/32">/</span>
               <button
                 onClick={() => language !== 'th' && toggleLanguage()}
-                className={`px-2.5 py-1 transition-colors ${language === 'th' ? 'text-[#F0CF65]' : 'text-[#F4F1EC]/40 hover:text-[#F4F1EC]/80'}`}
+                className={`px-2.5 py-1 transition-colors ${language === 'th' ? 'text-[#E0A24B]' : 'text-[#F7EFE2]/45 hover:text-[#F7EFE2]/80'}`}
                 aria-pressed={language === 'th'}
               >TH</button>
             </div>
@@ -103,7 +103,7 @@ export default function Navigation() {
             <button
               onClick={() => setIsMenuOpen(true)}
               aria-label="Open menu"
-              className="lg:hidden p-2 -m-2 text-[#F4F1EC] hover:text-[#F0CF65] transition-colors"
+              className="lg:hidden p-2 -m-2 text-[#F7EFE2] hover:text-[#E0A24B] transition-colors"
             >
               <Menu className="w-6 h-6" />
             </button>
@@ -113,7 +113,7 @@ export default function Navigation() {
 
       {/* Full-screen overlay menu */}
       <div
-        className={`fixed inset-0 z-[200] bg-[#0A0908] transition-[opacity,transform] duration-500 ease-out ${
+        className={`fixed inset-0 z-[200] bg-[#14100E] transition-[opacity,transform] duration-500 ease-out ${
           isMenuOpen ? 'translate-x-0 opacity-100 pointer-events-auto' : 'translate-x-full opacity-0 pointer-events-none'
         }`}
         aria-hidden={!isMenuOpen}
@@ -121,11 +121,11 @@ export default function Navigation() {
         <div className="grain-overlay" />
         <div className="h-full flex flex-col container-deco">
           <div className="flex items-center justify-between py-6">
-            <span className="font-serif italic text-lg text-[#F4F1EC]">The Mellowship</span>
+            <span className="font-serif italic text-lg text-[#F7EFE2]">The Mellowship</span>
             <button
               onClick={() => setIsMenuOpen(false)}
               aria-label="Close menu"
-              className="p-2 -m-2 text-[#F4F1EC] hover:text-[#F0CF65] transition-colors"
+              className="p-2 -m-2 text-[#F7EFE2] hover:text-[#E0A24B] transition-colors"
             >
               <X className="w-6 h-6" />
             </button>
@@ -143,7 +143,7 @@ export default function Navigation() {
                     className="group block"
                     style={{ animation: `fadeRise 0.6s ${i * 60}ms cubic-bezier(0.16,1,0.3,1) both` }}
                   >
-                    <span className="font-serif italic text-[clamp(28px,7vw,68px)] text-[#F4F1EC] group-hover:text-[#F0CF65] transition-colors leading-tight">
+                    <span className="font-serif italic text-[clamp(28px,7vw,60px)] text-[#F7EFE2] group-hover:text-[#E0A24B] transition-colors leading-tight">
                       {language === 'en' ? item.en : item.th}
                     </span>
                   </button>
@@ -152,16 +152,16 @@ export default function Navigation() {
             </ul>
           </div>
 
-          <div className="py-8 flex flex-col md:flex-row items-center justify-between gap-6 border-t border-[#D4A84B]/15">
+          <div className="py-8 flex flex-col md:flex-row items-center justify-between gap-6 border-t border-[#E0A24B]/12">
             <div className="flex items-center text-[11px] font-mono">
               <button
                 onClick={() => language !== 'en' && toggleLanguage()}
-                className={`px-3 py-1 ${language === 'en' ? 'text-[#F0CF65]' : 'text-[#F4F1EC]/40'}`}
+                className={`px-3 py-1 ${language === 'en' ? 'text-[#E0A24B]' : 'text-[#F7EFE2]/45'}`}
               >EN</button>
-              <span className="text-[#D4A84B]/40">/</span>
+              <span className="text-[#E0A24B]/32">/</span>
               <button
                 onClick={() => language !== 'th' && toggleLanguage()}
-                className={`px-3 py-1 ${language === 'th' ? 'text-[#F0CF65]' : 'text-[#F4F1EC]/40'}`}
+                className={`px-3 py-1 ${language === 'th' ? 'text-[#E0A24B]' : 'text-[#F7EFE2]/45'}`}
               >TH</button>
             </div>
             <button onClick={handleBook} className="btn-gold">

@@ -24,29 +24,29 @@ export default function HeroSection() {
           height={1920}
           fetchPriority="high"
           decoding="async"
-          className="w-full h-full object-cover object-center img-warm"
+          className="w-full h-full object-cover object-center img-warm brightness-[0.82]"
         />
         {/* Layered atmosphere */}
-        <div className="absolute inset-0 bg-gradient-to-b from-[#0A0908]/85 via-[#0A0908]/55 to-[#0A0908]" />
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,transparent_0%,#0A0908_85%)]" />
+        <div className="absolute inset-0 bg-gradient-to-b from-[#14100E]/82 via-[#14100E]/56 to-[#14100E]" />
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(20,16,14,0.12)_0%,rgba(20,16,14,0.32)_48%,rgba(20,16,14,0.88)_88%)]" />
       </div>
 
       {/* Main content */}
       <div className="relative z-10 text-center px-6 max-w-4xl pt-16">
-        <p className="font-mono text-[10px] sm:text-[11px] tracking-[0.38em] uppercase text-[#D4A84B] mb-7" data-reveal data-delay="100">
+        <p className="font-mono text-[10px] sm:text-[11px] tracking-[0.24em] uppercase text-[#E0A24B] mb-6" data-reveal data-delay="100">
           The Mellowship · Chiang Mai
         </p>
 
         <h1
-          className="font-serif font-medium text-[clamp(42px,7.4vw,104px)] leading-[1.02] tracking-tight mb-7"
+          className="font-serif font-medium text-[clamp(40px,6.4vw,86px)] leading-[1.06] mb-7"
           data-reveal data-delay="200"
         >
-          <span className="block text-[#F4F1EC]">The Soul of Jazz</span>
+          <span className="block text-[#F7EFE2]">The Soul of Jazz</span>
           <span className="block gold-text italic">in the Heart of the City.</span>
         </h1>
 
         <p
-          className="font-display italic text-[clamp(18px,2.1vw,25px)] text-[#F4F1EC]/78 max-w-2xl mx-auto mb-10 leading-relaxed"
+          className="font-display italic text-[clamp(17px,1.9vw,23px)] text-[#F7EFE2]/82 max-w-2xl mx-auto mb-9 leading-relaxed"
           data-reveal data-delay="320"
         >
           {language === 'en'

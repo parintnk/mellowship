@@ -66,20 +66,20 @@ export default function LineupSection() {
   const handleReserve = () => window.open('tel:053908888', '_self');
 
   return (
-    <section ref={ref} id="lineup" className="relative section-pad bg-[#0A0908] overflow-hidden">
+    <section ref={ref} id="lineup" className="relative section-pad bg-[#16110F] overflow-hidden">
       {/* Faint background image */}
       <div className="absolute inset-0 opacity-[0.18]">
         <img src="/stage_spotlight.jpg" alt="" className="w-full h-full object-cover img-cinematic" />
-        <div className="absolute inset-0 bg-gradient-to-b from-[#0A0908] via-transparent to-[#0A0908]" />
+        <div className="absolute inset-0 bg-gradient-to-b from-[#16110F] via-transparent to-[#16110F]" />
       </div>
 
       <div className="relative container-deco">
         <div className="text-center mb-16" data-reveal>
           <p className="eyebrow mx-auto justify-center mb-5">{t('lineup.label')}</p>
-          <h2 className="font-serif text-[clamp(40px,6vw,84px)] leading-none gold-text">
+          <h2 className="font-serif text-[clamp(38px,5.4vw,74px)] leading-none gold-text">
             <span className="italic font-medium">{language === 'en' ? 'Live Performance Schedule' : 'ตารางการแสดงสด'}</span>
           </h2>
-          <p className="font-display italic text-xl text-[#F4F1EC]/70 max-w-3xl mx-auto leading-relaxed mt-8">
+          <p className="font-display italic text-xl text-[#F7EFE2]/72 max-w-3xl mx-auto leading-relaxed mt-8">
             {language === 'en'
               ? 'Weekly Lineups: Featuring Thailand’s finest jazz maestros and international guest artists.'
               : 'ตารางประจำสัปดาห์: พบกับศิลปินแจ๊สชั้นนำของไทยและศิลปินรับเชิญจากต่างประเทศ'}
@@ -88,38 +88,38 @@ export default function LineupSection() {
         </div>
 
         <div className="grid lg:grid-cols-12 gap-10 lg:gap-16 items-start">
-          <div className="lg:col-span-8 deco-corners relative bg-gradient-to-br from-[#141210] to-[#0F0D0B] p-5 sm:p-8 md:p-10" data-reveal data-delay="100">
+          <div className="lg:col-span-8 deco-corners relative bg-[#1D1815] p-5 sm:p-8 md:p-10 shadow-[0_14px_40px_rgba(0,0,0,0.18)]" data-reveal data-delay="100">
             <span className="corner-tl" /><span className="corner-tr" /><span className="corner-bl" /><span className="corner-br" />
 
-            <div className="flex items-center justify-between gap-5 mb-8 pb-6 border-b border-[#D4A84B]/15">
+            <div className="flex items-center justify-between gap-5 mb-8 pb-6 border-b border-[#E0A24B]/12">
               <div className="flex items-center gap-3">
-                <CalendarDays className="w-5 h-5 text-[#D4A84B]" />
-                <span className="font-mono text-[10px] tracking-[0.35em] text-[#D4A84B] uppercase">
+                <CalendarDays className="w-5 h-5 text-[#E0A24B]" />
+                <span className="font-mono text-[10px] tracking-[0.22em] text-[#E0A24B] uppercase">
                   {language === 'en' ? 'Doors 7 PM' : 'เปิด 19:00'}
                 </span>
               </div>
-              <span className="font-mono text-[10px] tracking-[0.35em] text-[#F4F1EC]/50 uppercase">{t('lineup.time')}</span>
+              <span className="font-mono text-[10px] tracking-[0.22em] text-[#F7EFE2]/55 uppercase">{t('lineup.time')}</span>
             </div>
 
-            <div className="divide-y divide-[#D4A84B]/15">
+            <div className="divide-y divide-[#E0A24B]/12">
               {weeklyLineup.map((day, dayIndex) => (
                 <article key={day.day.en} className="py-6 first:pt-0 last:pb-0" data-reveal data-delay={String(dayIndex * 60)}>
-                  <h3 className="font-serif italic text-2xl md:text-3xl text-[#F4F1EC] mb-4">
+                  <h3 className="font-serif italic text-2xl md:text-3xl text-[#F7EFE2] mb-4">
                     {language === 'en' ? day.day.en : day.day.th}
                   </h3>
                   <div className="space-y-4">
                     {day.sets.map((set) => (
                       <div key={set.artist} className="grid md:grid-cols-[130px_minmax(160px,auto)_1fr] gap-3 md:gap-5 md:items-center">
-                        <p className="font-mono text-[11px] tracking-[0.25em] text-[#F4F1EC]/55 uppercase">
+                        <p className="font-mono text-[11px] tracking-[0.18em] text-[#F7EFE2]/58 uppercase">
                           {set.time}
                         </p>
                         <div>
-                          <span className="inline-flex items-center gap-2 border border-[#D4A84B]/35 px-3 py-1.5 font-mono text-[10px] tracking-[0.25em] text-[#D4A84B] uppercase">
+                          <span className="inline-flex items-center gap-2 rounded border border-[#E0A24B]/30 px-3 py-1.5 font-mono text-[10px] tracking-[0.18em] text-[#E0A24B] uppercase">
                             <Music2 className="w-3.5 h-3.5" />
                             {language === 'en' ? set.genre.en : set.genre.th}
                           </span>
                         </div>
-                        <p className="font-serif italic text-lg md:text-xl text-[#F4F1EC]">
+                        <p className="font-serif italic text-lg md:text-xl text-[#F7EFE2]">
                           {set.artist}
                         </p>
                       </div>
@@ -140,12 +140,12 @@ export default function LineupSection() {
               <span className="corner-tl" /><span className="corner-tr" /><span className="corner-bl" /><span className="corner-br" />
               <div className="aspect-[3/4] overflow-hidden relative">
                 <img src="/photo/Live Performance Schedule.jpg" alt="Live performance schedule" className="w-full h-full object-cover img-warm" />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#0A0908]/80 via-transparent to-transparent" />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#14100E]/68 via-transparent to-transparent" />
               </div>
             </div>
 
-            <div className="absolute -bottom-5 left-1/2 -translate-x-1/2 px-5 py-2 bg-[#0A0908] border border-[#D4A84B]/40 whitespace-nowrap">
-              <span className="font-mono text-[10px] tracking-[0.3em] text-[#D4A84B] uppercase">
+            <div className="absolute -bottom-5 left-1/2 -translate-x-1/2 rounded px-5 py-2 bg-[#14100E] border border-[#E0A24B]/28 whitespace-nowrap">
+              <span className="font-mono text-[10px] tracking-[0.22em] text-[#E0A24B] uppercase">
                 {language === 'en' ? 'Jazz · Funk · Soul' : 'แจ๊ส · ฟังก์ · โซล'}
               </span>
             </div>

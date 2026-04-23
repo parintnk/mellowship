@@ -11,7 +11,7 @@ import './App.css';
 function App() {
   return (
     <LanguageProvider>
-      <div className="relative bg-[#0A0908] min-h-screen text-[#F4F1EC]">
+      <div className="relative bg-[#14100E] min-h-screen text-[#F7EFE2]">
         <div className="grain-overlay" />
         <Navigation />
         <main className="relative">
