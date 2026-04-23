@@ -18,7 +18,7 @@ export default function HeroSection() {
       {/* Cinematic stage image */}
       <div className="absolute inset-0">
         <img
-          src="/photo/Head.jpg"
+          src="/photo/New2/612506391_1354558433377785_4564113088896336069_n.jpg"
           alt="The Mellowship lounge interior with live stage"
           width={1920}
           height={1920}

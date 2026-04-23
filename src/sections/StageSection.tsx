@@ -90,7 +90,7 @@ export default function StageSection() {
         <div className="grid lg:grid-cols-12 gap-10 items-center" data-reveal>
           <div className="lg:col-span-7 relative deco-corners aspect-[16/9] overflow-hidden">
             <span className="corner-tl" /><span className="corner-tr" /><span className="corner-bl" /><span className="corner-br" />
-            <img src="/photo/Limited by design.jpg" alt="The Mellowship intimate seating" className="w-full h-full object-cover img-warm" />
+            <img src="/photo/New2/596808724_1326546492845646_4228531957484020801_n.jpg" alt="The Mellowship intimate seating" className="w-full h-full object-cover img-warm" />
             <div className="absolute inset-0 bg-gradient-to-r from-[#14100E]/60 via-transparent to-transparent" />
             <div className="absolute bottom-6 left-6">
               <p className="font-mono text-[10px] tracking-[0.22em] text-[#E0A24B] uppercase">{language === 'en' ? 'The lounge · 9:42 PM' : 'เลานจ์ · 21:42 น.'}</p>
