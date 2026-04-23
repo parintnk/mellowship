@@ -2,7 +2,8 @@ import { useLanguage } from '../context/LanguageContext';
 import { useReveal } from '../hooks/useReveal';
 import { Phone, MapPin, Star, Clock } from 'lucide-react';
 
-const MAP_URL = 'https://www.google.com/maps/search/?api=1&query=231%2F12%201004%2C%20Tambon%20Chang%20Phueak%2C%20Mueang%20Chiang%20Mai%20District%2C%20Chiang%20Mai%2050200';
+const MAP_URL = 'https://maps.app.goo.gl/YNfrkytXU6XmAw8H9';
+const MAP_EMBED_URL = 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3776.829954829136!2d98.95755077633247!3d18.805729982344065!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x30da3a6787370607%3A0x9ebbf97261d0370a!2sThe%20Mellowship%20Jazz%20Club!5e0!3m2!1sen!2sth!4v1776937020292!5m2!1sen!2sth';
 
 export default function ContactSection() {
   const { t, language } = useLanguage();
@@ -84,7 +85,7 @@ export default function ContactSection() {
           <div className="lg:col-span-7 relative deco-corners aspect-[4/3] lg:aspect-auto lg:min-h-[500px]" data-reveal data-delay="150">
             <span className="corner-tl" /><span className="corner-tr" /><span className="corner-bl" /><span className="corner-br" />
             <iframe
-              src="https://maps.google.com/maps?q=231%2F12%201004%2C%20Tambon%20Chang%20Phueak%2C%20Mueang%20Chiang%20Mai%20District%2C%20Chiang%20Mai%2050200&z=16&output=embed"
+              src={MAP_EMBED_URL}
               width="100%"
               height="100%"
               style={{ border: 0, filter: 'grayscale(65%) invert(90%) contrast(80%) sepia(16%) hue-rotate(-8deg)' }}
