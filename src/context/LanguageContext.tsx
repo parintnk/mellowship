@@ -1,4 +1,4 @@
-import React, { createContext, useCallback, useContext, useState } from 'react';
+import React, { createContext, useCallback, useContext, useEffect, useState } from 'react';
 
 type Language = 'en' | 'th';
 
@@ -21,7 +21,7 @@ export const translations: Translations = {
   'hero.cta.lineup': { en: 'View Performance Schedule', th: 'ดูรายการแสดง' },
   'lineup.label': { en: 'WEEKLY LINEUPS', th: 'ตารางการแสดงประจำสัปดาห์' },
   'lineup.title': { en: 'LIVE JAZZ', th: 'แจ๊สสด' },
-  'lineup.time': { en: '8 PM – 11 PM', th: '20:00 – 23:00' },
+  'lineup.time': { en: '7:30 PM – 11:15 PM', th: '19:30 – 23:15' },
   'lineup.venue': { en: 'THE MELLOWSHIP', th: 'เดอะ เมลโลชิพ' },
   'lineup.cta': { en: 'Reserve a listening seat', th: 'จองที่นั่งฟังเพลง' },
   'exp.music': { en: 'TRUE LISTENING', th: 'การฟังอย่างแท้จริง' },
@@ -32,10 +32,10 @@ export const translations: Translations = {
   'exp.cta': { en: 'Explore the culinary program', th: 'สำรวจเมนูอาหาร' },
   'menu.title': { en: 'Culinary Arts', th: 'ศิลปะแห่งรสชาติ' },
   'menu.desc': {
-    en: 'A Symphony of Flavors. Complement your evening with our curated selection of gourmet bites and signature refreshments designed to enhance your sensory journey.',
-    th: 'ซิมโฟนีแห่งรสชาติ เติมเต็มค่ำคืนด้วยอาหารทานเล่นระดับกูร์เมต์และเครื่องดื่มซิกเนเจอร์ที่ออกแบบมาเพื่อยกระดับประสบการณ์ของคุณ',
+    en: 'A Symphony of Flavors. Complement your evening with our curated selection of gourmet bites and seasonal beverages designed to enhance your sensory journey.',
+    th: 'ซิมโฟนีแห่งรสชาติ เติมเต็มค่ำคืนด้วยอาหารทานเล่นระดับกูร์เมต์และเครื่องดื่มตามฤดูกาลที่ออกแบบมาเพื่อยกระดับประสบการณ์ของคุณ',
   },
-  'menu.refreshments': { en: 'Signature Refreshments', th: 'เครื่องดื่มซิกเนเจอร์' },
+  'menu.refreshments': { en: 'Seasonal Beverages', th: 'เครื่องดื่มตามฤดูกาล' },
   'menu.bites': { en: 'Signature Dishes', th: 'อาหารซิกเนเจอร์' },
   'menu.hours': { en: 'Opening Hours', th: 'เวลาเปิด' },
   'menu.hours.detail': { en: 'Tue-Sun: 6 PM – Midnight', th: 'อังคาร-อาทิตย์: 18:00 – 00:00' },
@@ -79,6 +79,10 @@ const LanguageContext = createContext<LanguageContextType | undefined>(undefined
 
 export function LanguageProvider({ children }: { children: React.ReactNode }) {
   const [language, setLanguage] = useState<Language>('en');
+
+  useEffect(() => {
+    document.documentElement.lang = language;
+  }, [language]);
 
   const t = useCallback((key: string): string => {
     if (translations[key]) {

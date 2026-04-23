@@ -8,7 +8,7 @@ const refreshments: Item[] = [
   { name: { en: 'Yuzu Jasmine Spritz', th: 'ยูซุจัสมินสปริตซ์' }, desc: { en: 'Yuzu · jasmine tea · bright citrus', th: 'ยูซุ · ชาจัสมิน · ซิตรัสสดชื่น' }, price: '220' },
   { name: { en: 'Smoked Lychee Tonic', th: 'ลิ้นจี่โทนิกรมควัน' }, desc: { en: 'Lychee · rosemary smoke · tonic botanicals', th: 'ลิ้นจี่ · โรสแมรี่รมควัน · โทนิกสมุนไพร' }, price: '240' },
   { name: { en: 'Cold Brew Nocturne', th: 'โคลด์บรูน็อกเทิร์น' }, desc: { en: 'Slow-steeped coffee · cacao · vanilla cream', th: 'กาแฟสกัดเย็น · คาเคา · วานิลลาครีม' }, price: '210' },
-  { name: { en: 'Golden Ginger Fizz', th: 'จินเจอร์ฟิซซ์สีทอง' }, desc: { en: 'Ginger · honey · lime leaf · fine bubbles', th: 'ขิง · น้ำผึ้ง · ใบมะกรูด · ฟองละเอียด' }, price: '220' },
+  { name: { en: 'Golden Ginger Soda', th: 'จินเจอร์โซดาสีทอง' }, desc: { en: 'Ginger · honey · lime leaf · sparkling water', th: 'ขิง · น้ำผึ้ง · ใบมะกรูด · น้ำโซดา' }, price: '220' },
 ];
 
 const dishes: Item[] = [
@@ -60,7 +60,7 @@ export default function MenuSection() {
 
           {/* Right: menu - appears first on mobile */}
           <div className="lg:col-span-7 space-y-10 sm:space-y-12 order-1 lg:order-2" data-reveal data-delay="200">
-            {/* Signature refreshments */}
+            {/* Seasonal beverages */}
             <div>
               <div className="flex items-baseline justify-between mb-6">
                 <h3 className="font-serif italic text-3xl md:text-4xl text-[#F4F1EC] flex items-center gap-3">

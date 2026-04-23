@@ -62,6 +62,20 @@
   .font-mono { font-family: 'IBM Plex Mono', monospace; }
   .font-serif { font-family: 'Playfair Display', serif; }
   .font-display { font-family: 'Cormorant Garamond', serif; }
+
+  html[lang="en"] body,
+  html[lang="en"] h1,
+  html[lang="en"] h2,
+  html[lang="en"] h3,
+  html[lang="en"] h4,
+  html[lang="en"] h5,
+  html[lang="en"] h6,
+  html[lang="en"] .font-serif,
+  html[lang="en"] .font-display,
+  html[lang="en"] .font-mono {
+    font-family: 'Slabo 27px', serif;
+    letter-spacing: 0;
+  }
 }
 
 /* ------------------------------------------------------------------

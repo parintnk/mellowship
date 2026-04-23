@@ -50,8 +50,8 @@ export default function HeroSection() {
           data-reveal data-delay="320"
         >
           {language === 'en'
-            ? 'Experience the authentic vibe of a New York-style jazz lounge. Where world-class melodies meet an unforgettable atmosphere.'
-            : 'สัมผัสบรรยากาศแจ๊สเลานจ์สไตล์นิวยอร์ก ที่ท่วงทำนองระดับโลกพบกับบรรยากาศอันน่าจดจำ'}
+            ? 'Experience the authentic vibe of a New York-style jazz club. Where world-class melodies meet an unforgettable atmosphere.'
+            : 'สัมผัสบรรยากาศแจ๊สคลับสไตล์นิวยอร์ก ที่ท่วงทำนองระดับโลกพบกับบรรยากาศอันน่าจดจำ'}
         </p>
 
         <div className="mx-auto flex w-full max-w-[320px] flex-col sm:w-auto sm:max-w-none sm:flex-row gap-3 sm:gap-4 justify-center items-center" data-reveal data-delay="430">
