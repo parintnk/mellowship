@@ -126,6 +126,172 @@
   animation: none;
 }
 
+.app-loader {
+  position: fixed;
+  inset: 0;
+  z-index: 10000;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 50% 38%, rgba(224, 162, 75, 0.12), transparent 28%),
+    linear-gradient(180deg, #1d1815 0%, #14100e 48%, #0d0a09 100%);
+  color: var(--ivory);
+  opacity: 1;
+  visibility: visible;
+  transition: opacity 0.55s ease, visibility 0.55s ease;
+}
+
+.app-loader--ready {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.app-loader__stage {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.app-loader__stage::before,
+.app-loader__stage::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 32vw;
+  max-width: 440px;
+  background: linear-gradient(90deg, rgba(13, 10, 9, 0.94), rgba(58, 48, 41, 0.2), transparent);
+}
+
+.app-loader__stage::before {
+  left: 0;
+}
+
+.app-loader__stage::after {
+  right: 0;
+  transform: scaleX(-1);
+}
+
+.app-loader__beam {
+  position: absolute;
+  top: -14%;
+  width: 34vw;
+  height: 120%;
+  transform-origin: top center;
+  background: linear-gradient(180deg, rgba(224, 162, 75, 0.2), rgba(224, 162, 75, 0));
+  filter: blur(18px);
+  opacity: 0.7;
+  animation: loader-beam 3.4s ease-in-out infinite;
+}
+
+.app-loader__beam--left {
+  left: 15%;
+  transform: rotate(18deg);
+}
+
+.app-loader__beam--right {
+  right: 15%;
+  transform: rotate(-18deg);
+  animation-delay: -1.7s;
+}
+
+.app-loader__content {
+  position: relative;
+  z-index: 1;
+  width: min(86vw, 420px);
+  text-align: center;
+  padding: 2rem 1.5rem;
+}
+
+.app-loader__content::before,
+.app-loader__content::after {
+  content: '';
+  display: block;
+  width: min(220px, 62vw);
+  height: 1px;
+  margin: 0 auto 1.5rem;
+  background: linear-gradient(90deg, transparent, rgba(224, 162, 75, 0.7), transparent);
+}
+
+.app-loader__content::after {
+  margin: 1.5rem auto 0;
+}
+
+.app-loader__mark {
+  display: inline-grid;
+  place-items: center;
+  width: 54px;
+  height: 54px;
+  margin-bottom: 1rem;
+  color: #17110d;
+  background: #e0a24b;
+  border-radius: 50%;
+  box-shadow: 0 0 36px rgba(224, 162, 75, 0.3);
+}
+
+.app-loader__eyebrow {
+  margin-bottom: 0.75rem;
+  color: var(--gold-bright);
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+}
+
+.app-loader__title {
+  margin-bottom: 0.7rem;
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(2.3rem, 8vw, 4.4rem);
+  font-weight: 500;
+  line-height: 1;
+}
+
+.app-loader__copy {
+  margin: 0 auto;
+  max-width: 24rem;
+  color: rgba(247, 239, 226, 0.68);
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(1.1rem, 4.2vw, 1.45rem);
+  font-style: italic;
+  line-height: 1.35;
+}
+
+.app-loader__equalizer {
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  gap: 7px;
+  height: 34px;
+  margin-top: 1.7rem;
+}
+
+.app-loader__equalizer span {
+  width: 5px;
+  height: 10px;
+  border-radius: 999px;
+  background: var(--gold-bright);
+  animation: loader-eq 0.95s ease-in-out infinite;
+  opacity: 0.9;
+}
+
+.app-loader__equalizer span:nth-child(2) {
+  animation-delay: -0.35s;
+}
+
+.app-loader__equalizer span:nth-child(3) {
+  animation-delay: -0.7s;
+}
+
+.app-loader__equalizer span:nth-child(4) {
+  animation-delay: -0.2s;
+}
+
+.app-loader__equalizer span:nth-child(5) {
+  animation-delay: -0.55s;
+}
+
 .hero-copy {
   isolation: isolate;
   text-shadow: 0 2px 18px rgba(0, 0, 0, 0.86), 0 1px 2px rgba(0, 0, 0, 0.92);
@@ -145,6 +311,25 @@
 @keyframes shimmer {
   0%, 100% { background-position: 0% 50%; }
   50% { background-position: 100% 50%; }
+}
+
+@keyframes loader-eq {
+  0%, 100% { height: 10px; }
+  45% { height: 32px; }
+}
+
+@keyframes loader-beam {
+  0%, 100% { opacity: 0.35; }
+  50% { opacity: 0.75; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .app-loader,
+  .app-loader__beam,
+  .app-loader__equalizer span {
+    animation: none;
+    transition: none;
+  }
 }
 
 .gold-divider {
