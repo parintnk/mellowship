@@ -21,6 +21,7 @@ const dishes: Item[] = [
 export default function MenuSection() {
   const { t, language } = useLanguage();
   const ref = useReveal<HTMLElement>();
+  const handleReserve = () => window.open('tel:053908888', '_self');
 
   return (
     <section ref={ref} id="menu" className="relative section-pad bg-[#14100E]">
@@ -120,7 +121,7 @@ export default function MenuSection() {
             </div>
 
             <button
-              onClick={() => window.open('https://www.facebook.com/themellowshipjazz/?locale=th_TH', '_blank')}
+              onClick={handleReserve}
               className="btn-ghost"
             >
               <FileText className="w-4 h-4" />

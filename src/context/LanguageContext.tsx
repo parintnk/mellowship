@@ -50,14 +50,12 @@ export const translations: Translations = {
     th: '231/12 1004 ตำบลช้างเผือก อำเภอเมืองเชียงใหม่ เชียงใหม่ 50200',
   },
   'contact.cta.call': { en: 'Call now', th: 'โทรเลย' },
-  'contact.cta.fb': { en: 'Message on Facebook', th: 'ส่งข้อความบน Facebook' },
+  'contact.cta.map': { en: 'Open map', th: 'เปิดแผนที่' },
   'contact.location': {
     en: 'Join us tonight. Limited seating to ensure the best acoustic experience.',
     th: 'มาร่วมค่ำคืนนี้กับเรา ที่นั่งมีจำนวนจำกัดเพื่อรักษาประสบการณ์เสียงที่ดีที่สุด',
   },
   'footer.copy': { en: '© The Mellowship Music Destination', th: '© เดอะ เมลโลชิพ มิวสิกเดสติเนชัน' },
-  'footer.ig': { en: 'Instagram', th: 'Instagram' },
-  'footer.fb': { en: 'Facebook', th: 'Facebook' },
   'happyhour.label': { en: 'LIMITED SEATING', th: 'ที่นั่งจำกัด' },
   'happyhour.time': { en: 'Reservations recommended', th: 'แนะนำให้สำรองที่นั่ง' },
   'happyhour.deal': {

@@ -1,14 +1,15 @@
 import { useLanguage } from '../context/LanguageContext';
 import { useReveal } from '../hooks/useReveal';
-import { Phone, MapPin, Facebook, Instagram, Star, Clock } from 'lucide-react';
+import { Phone, MapPin, Star, Clock } from 'lucide-react';
+
+const MAP_URL = 'https://www.google.com/maps/search/?api=1&query=231%2F12%201004%2C%20Tambon%20Chang%20Phueak%2C%20Mueang%20Chiang%20Mai%20District%2C%20Chiang%20Mai%2050200';
 
 export default function ContactSection() {
   const { t, language } = useLanguage();
   const ref = useReveal<HTMLElement>();
 
   const handleCall = () => window.open('tel:053908888', '_self');
-  const handleFacebook = () => window.open('https://www.facebook.com/themellowshipjazz/', '_blank');
-  const handleInstagram = () => window.open('https://www.instagram.com/themellowshipjazz/', '_blank');
+  const handleMap = () => window.open(MAP_URL, '_blank', 'noopener,noreferrer');
 
   return (
     <section ref={ref} id="contact" className="relative section-pad bg-[#14100E] border-t border-[#E0A24B]/10">
@@ -72,9 +73,9 @@ export default function ContactSection() {
                 <Phone className="w-4 h-4" />
                 {t('contact.cta.call')}
               </button>
-              <button onClick={handleFacebook} className="btn-ghost flex-1 justify-center">
-                <Facebook className="w-4 h-4" />
-                {t('contact.cta.fb')}
+              <button onClick={handleMap} className="btn-ghost flex-1 justify-center">
+                <MapPin className="w-4 h-4" />
+                {t('contact.cta.map')}
               </button>
             </div>
           </div>
@@ -106,14 +107,14 @@ export default function ContactSection() {
 
             <p className="font-mono text-[10px] tracking-[0.2em] text-[#F7EFE2]/45 uppercase">{t('footer.copy')}</p>
 
-            <div className="flex items-center gap-6">
-              <button onClick={handleInstagram} aria-label="Instagram" className="flex items-center gap-2 text-[#F7EFE2]/58 hover:text-[#E0A24B] transition-colors text-xs font-mono tracking-widest uppercase py-2 px-1">
-                <Instagram className="w-4 h-4" />
-                {t('footer.ig')}
+            <div className="flex items-center gap-5">
+              <button onClick={handleCall} className="flex items-center gap-2 text-[#F7EFE2]/58 hover:text-[#E0A24B] transition-colors text-xs font-mono tracking-widest uppercase py-2 px-1">
+                <Phone className="w-4 h-4" />
+                {t('contact.cta.call')}
               </button>
-              <button onClick={handleFacebook} aria-label="Facebook" className="flex items-center gap-2 text-[#F7EFE2]/58 hover:text-[#E0A24B] transition-colors text-xs font-mono tracking-widest uppercase py-2 px-1">
-                <Facebook className="w-4 h-4" />
-                {t('footer.fb')}
+              <button onClick={handleMap} className="flex items-center gap-2 text-[#F7EFE2]/58 hover:text-[#E0A24B] transition-colors text-xs font-mono tracking-widest uppercase py-2 px-1">
+                <MapPin className="w-4 h-4" />
+                {t('contact.cta.map')}
               </button>
             </div>
           </div>
