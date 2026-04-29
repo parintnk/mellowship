@@ -5,17 +5,17 @@ import { Cake, Clock, Coffee, FileText, GlassWater, Leaf, UtensilsCrossed } from
 type Item = { name: { en: string; th: string }; desc?: { en: string; th: string }; price: string };
 
 const refreshments: Item[] = [
-  { name: { en: 'Yuzu Jasmine Spritz', th: 'ยูซุจัสมินสปริตซ์' }, desc: { en: 'Yuzu · jasmine tea · bright citrus', th: 'ยูซุ · ชาจัสมิน · ซิตรัสสดชื่น' }, price: '220' },
-  { name: { en: 'Smoked Lychee Tonic', th: 'ลิ้นจี่โทนิกรมควัน' }, desc: { en: 'Lychee · rosemary smoke · tonic botanicals', th: 'ลิ้นจี่ · โรสแมรี่รมควัน · โทนิกสมุนไพร' }, price: '240' },
-  { name: { en: 'Cold Brew Nocturne', th: 'โคลด์บรูน็อกเทิร์น' }, desc: { en: 'Slow-steeped coffee · cacao · vanilla cream', th: 'กาแฟสกัดเย็น · คาเคา · วานิลลาครีม' }, price: '210' },
-  { name: { en: 'Golden Ginger Soda', th: 'จินเจอร์โซดาสีทอง' }, desc: { en: 'Ginger · honey · lime leaf · sparkling water', th: 'ขิง · น้ำผึ้ง · ใบมะกรูด · น้ำโซดา' }, price: '220' },
+  { name: { en: 'My Favorite Things', th: 'My Favorite Things' }, price: '350' },
+  { name: { en: 'Chameleon', th: 'Chameleon' }, price: '350' },
+  { name: { en: 'In a Sentimental Mood', th: 'In a Sentimental Mood' }, price: '350' },
+  { name: { en: 'Naima', th: 'Naima' }, price: '350' },
 ];
 
 const dishes: Item[] = [
-  { name: { en: 'Seared Hokkaido Scallop', th: 'หอยเชลล์ฮอกไกโดย่าง' }, desc: { en: 'Cauliflower silk · kaffir lime oil', th: 'ครีมกะหล่ำดอก · น้ำมันใบมะกรูด' }, price: '420' },
-  { name: { en: 'Truffle Parmesan Mille-Feuille', th: 'มิลเฟยทรัฟเฟิลพาร์เมซาน' }, desc: { en: 'Crisp potato layers · aged parmesan', th: 'ชั้นมันฝรั่งกรอบ · พาร์เมซานบ่ม' }, price: '280' },
-  { name: { en: 'Crispy River Prawn Toast', th: 'โทสต์กุ้งแม่น้ำกรอบ' }, desc: { en: 'Herb aioli · pickled shallot', th: 'เฮิร์บไอโอลี · หอมแดงดอง' }, price: '320' },
-  { name: { en: 'Dark Chocolate Tart', th: 'ทาร์ตช็อกโกแลตเข้ม' }, desc: { en: 'Sea salt · espresso ice cream', th: 'เกลือทะเล · ไอศกรีมเอสเพรสโซ' }, price: '180' },
+  { name: { en: 'Beef Shoua', th: 'เนื้อชัว' }, price: '490' },
+  { name: { en: 'Black Squid Ink Pink Sauce', th: 'หมึกดำซอสพิงค์' }, price: '300' },
+  { name: { en: 'Seabass Guacamole', th: 'ปลากะพงกัวคาโมเล่' }, price: '310' },
+  { name: { en: 'Ka-prao Moo Krop', th: 'กะเพราหมูกรอบ' }, price: '295' },
 ];
 
 export default function MenuSection() {
